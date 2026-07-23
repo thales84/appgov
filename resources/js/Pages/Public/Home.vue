@@ -42,6 +42,7 @@ const steps = computed(() => [
         <PublicHeader />
 
         <main id="main-content">
+            <!-- HERO SECTION -->
             <section class="relative overflow-hidden bg-brand-blue-900 text-white">
                 <div class="absolute inset-y-0 right-0 hidden w-[34%] border-l border-white/10 lg:block" aria-hidden="true">
                     <div class="absolute inset-y-0 left-12 w-px bg-white/10" />
@@ -50,34 +51,30 @@ const steps = computed(() => [
                     <div class="absolute bottom-12 right-40 size-20 bg-brand-red-700" />
                 </div>
 
-                <div class="page-container relative grid gap-12 py-16 sm:py-24 lg:grid-cols-[1.5fr_0.7fr] lg:py-28">
-                    <div class="max-w-4xl">
-                        <p class="eyebrow text-blue-200">{{ t('home.eyebrow') }}</p>
-                        <h1 class="mt-6 max-w-4xl font-display text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-7xl">
-                            {{ t('home.title') }}
+                <div class="page-container relative py-16 sm:py-24 lg:py-28">
+                    <div class="max-w-3xl">
+                        <p class="eyebrow text-blue-200">{{ t('home.heroEyebrow') }}</p>
+                        <h1 class="mt-4 font-display text-4xl font-bold tracking-tight text-white sm:text-6xl sm:leading-none">
+                            {{ t('home.heroTitle') }}
                         </h1>
-                        <p class="mt-7 max-w-2xl text-lg leading-8 text-blue-100 sm:text-xl">
-                            {{ t('home.intro') }}
+                        <p class="mt-6 text-xl leading-8 text-blue-100/90">
+                            {{ t('home.heroSubtitle') }}
                         </p>
-                        <div class="mt-9 flex flex-col gap-3 sm:flex-row">
-                            <Link href="/services" class="button-primary bg-white text-brand-blue-900 hover:bg-blue-50">
-                                {{ t('home.explore') }}
-                                <ArrowRightIcon class="size-5" aria-hidden="true" />
-                            </Link>
-                            <a href="#tracking" class="button-secondary border-white/35 bg-transparent text-white hover:border-white/60 hover:bg-white/10">
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#services" class="inline-flex items-center justify-center gap-2 rounded bg-brand-red-700 px-6 py-3.5 text-sm font-semibold text-white shadow hover:bg-brand-red-800 transition">
+                                <span>{{ t('home.exploreCatalog') }}</span>
+                                <ArrowRightIcon class="size-4" />
+                            </a>
+                            <a href="#process" class="inline-flex items-center justify-center rounded border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition">
                                 {{ t('home.seeTracking') }}
                             </a>
                         </div>
                     </div>
-
-                    <aside class="self-end border-l-4 border-brand-red-700 bg-white p-6 text-ink-900 lg:translate-y-8">
-                        <p class="eyebrow text-brand-red-700">{{ t('home.digitalFirst') }}</p>
-                        <p class="mt-4 leading-7 text-slate-700">{{ t('home.digitalFirstText') }}</p>
-                    </aside>
                 </div>
             </section>
 
-            <section id="services" class="page-container scroll-mt-6 py-16 sm:py-24">
+            <!-- SERVICES CATALOGUE SECTION -->
+            <section id="services" class="scroll-mt-6 page-container py-16 sm:py-24">
                 <div class="max-w-3xl">
                     <p class="eyebrow text-brand-blue-600">{{ t('home.servicesEyebrow') }}</p>
                     <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-5xl">
@@ -86,7 +83,7 @@ const steps = computed(() => [
                     <p class="mt-5 text-lg leading-8 text-slate-600">{{ t('home.servicesIntro') }}</p>
                 </div>
 
-                <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+                <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     <ServiceTile
                         v-for="service in services"
                         :key="service.key"
@@ -94,7 +91,7 @@ const steps = computed(() => [
                         :description="t(`services.${service.key}.description`)"
                         :color="service.color"
                         :badge="service.featured ? t('home.firstService') : t('home.plannedService')"
-                        :featured="service.featured"
+                        :disabled="!service.featured"
                     >
                         <template #icon>
                             <component :is="service.icon" class="size-6" />
@@ -103,6 +100,7 @@ const steps = computed(() => [
                 </div>
             </section>
 
+            <!-- PROCESS & TRACKING RAIL SECTION -->
             <section id="process" class="scroll-mt-6 border-y border-slate-200 bg-white py-16 sm:py-24">
                 <div class="page-container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
                     <div class="space-y-8">
@@ -118,7 +116,6 @@ const steps = computed(() => [
 
                         <!-- Visuel d'illustration avec Effet Wahouuu & Glassmorphism -->
                         <div class="relative group mt-6 rounded-2xl p-1 bg-gradient-to-br from-brand-blue-500/30 via-slate-200 to-brand-blue-900/40 shadow-2xl shadow-brand-blue-900/15">
-                            <!-- Background Glow Blobs -->
                             <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue-600 to-emerald-500 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" aria-hidden="true" />
 
                             <div class="relative overflow-hidden rounded-xl bg-slate-900 aspect-[4/3]">
@@ -128,16 +125,13 @@ const steps = computed(() => [
                                     class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100"
                                 />
 
-                                <!-- Overlay gradient -->
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
 
-                                <!-- Floating Glass Badge Top Left -->
                                 <div class="absolute top-4 left-4 backdrop-blur-md bg-slate-900/70 border border-white/20 rounded-lg px-3 py-2 text-white shadow-lg flex items-center gap-2">
                                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
                                     <span class="text-xs font-semibold tracking-wide">Traçabilité ANTS 24/7</span>
                                 </div>
 
-                                <!-- Floating Glass Badge Bottom Right -->
                                 <div class="absolute bottom-4 right-4 backdrop-blur-md bg-white/90 border border-slate-200/80 rounded-xl p-3 shadow-xl max-w-[220px]">
                                     <div class="flex items-center gap-2 text-xs font-bold text-slate-900">
                                         <svg class="w-4 h-4 text-brand-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -171,13 +165,14 @@ const steps = computed(() => [
                                     </svg>
                                 </div>
                                 <div>
-                                    <h4 class="text-xs font-bold text-slate-900">Identité Garantir</h4>
+                                    <h4 class="text-xs font-bold text-slate-900">Identité Garantie</h4>
                                     <p class="text-[11px] text-slate-500 mt-0.5">Authentification et vérification FranceConnect.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    <!-- RAIL DE PROGRESSION DU DOSSIER À DROITE -->
                     <div id="tracking" class="scroll-mt-6 rounded-2xl border border-slate-200/80 bg-white shadow-xl shadow-slate-900/5 overflow-hidden">
                         <div class="border-b border-slate-100 bg-slate-50/70 p-5 sm:p-6 sm:flex sm:items-center sm:justify-between sm:gap-4">
                             <div class="flex items-center gap-3">
@@ -219,11 +214,9 @@ const steps = computed(() => [
             <!-- SECTION AVANT FOOTER: Espace Sécurisé Citoyen & Call To Action Premium -->
             <section class="page-container py-16 sm:py-24">
                 <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-blue-950 via-brand-blue-900 to-slate-900 text-white shadow-2xl border border-white/10 p-8 sm:p-12 lg:p-16">
-                    <!-- Background Glow Shapes -->
                     <div class="absolute -right-20 -top-20 size-80 rounded-full bg-brand-blue-600/20 blur-3xl" aria-hidden="true" />
                     <div class="absolute -bottom-20 left-1/3 size-80 rounded-full bg-brand-red-700/15 blur-3xl" aria-hidden="true" />
 
-                    <!-- Decorative French Tricolor Bar at Top -->
                     <div class="absolute top-0 inset-x-0 h-1.5 flex">
                         <div class="w-1/3 bg-[#002395]" />
                         <div class="w-1/3 bg-white/80" />
@@ -245,11 +238,10 @@ const steps = computed(() => [
                                 {{ t('home.prepareText') }}
                             </p>
 
-                            <!-- Feature Badges -->
                             <div class="flex flex-wrap gap-3 pt-2">
                                 <div class="flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-xs font-medium text-blue-100">
                                     <svg class="size-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
                                     <span>Compte vérifié FranceConnect</span>
                                 </div>
@@ -267,7 +259,6 @@ const steps = computed(() => [
                                 </div>
                             </div>
 
-                            <!-- Buttons CTAs -->
                             <div class="pt-4 flex flex-wrap items-center gap-4">
                                 <Link
                                     :href="route('register')"
@@ -293,7 +284,6 @@ const steps = computed(() => [
                             </div>
                         </div>
 
-                        <!-- Right Side 3D Identity Badge Card -->
                         <div class="relative">
                             <div class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6">
                                 <div class="flex items-center justify-between border-b border-white/10 pb-4">
