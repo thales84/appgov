@@ -10,7 +10,9 @@ use App\Http\Controllers\Account\ApplicationSubmissionController;
 use App\Http\Controllers\Account\ApplicationTrackingController;
 use App\Http\Controllers\Account\CitizenDashboardController;
 use App\Http\Controllers\Account\CitizenProfileController;
+use App\Http\Controllers\Admin\AdminArchiveController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminReportController;
 use App\Http\Controllers\Admin\CatalogController;
 use App\Http\Controllers\Admin\ProcedureVersionController;
 use App\Http\Controllers\Admin\ProcedureVersionLifecycleController;
@@ -133,6 +135,11 @@ Route::prefix('admin')
     ])
     ->group(function (): void {
         Route::get('/', AdminDashboardController::class)->name('dashboard');
+
+        // Phase 8 Archive & Reports Routes
+        Route::get('/archive/applications/{application}/package', [AdminArchiveController::class, 'downloadPackage'])->name('archive.applications.package.download');
+        Route::get('/reports', [AdminReportController::class, 'index'])->name('reports.index');
+        Route::post('/reports/export', [AdminReportController::class, 'export'])->name('reports.export');
     });
 
 Route::prefix('admin/catalog')

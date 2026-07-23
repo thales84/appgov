@@ -4,6 +4,7 @@ namespace App\Domain\Applications\Models;
 
 use App\Domain\Applications\Enums\ApplicationStatus;
 use App\Domain\Appointments\Models\Appointment;
+use App\Domain\Archiving\Models\ArchivePackage;
 use App\Domain\Catalog\Models\ProcedureVersion;
 use App\Domain\Decisions\Models\Decision;
 use App\Domain\Deliveries\Models\Delivery;
@@ -149,5 +150,10 @@ class Application extends Model
     public function delivery(): HasOne
     {
         return $this->hasOne(Delivery::class);
+    }
+
+    public function archivePackage(): HasOne
+    {
+        return $this->hasOne(ArchivePackage::class);
     }
 }
