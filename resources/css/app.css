@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        color-scheme: light;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        min-width: 320px;
+        min-height: 100vh;
+    }
+
+    button,
+    a,
+    input,
+    select,
+    textarea {
+        @apply focus-visible:outline-none focus-visible:ring-3 focus-visible:ring-brand-blue-600/35;
+    }
+
+    ::selection {
+        @apply bg-brand-blue-100 text-brand-blue-900;
+    }
+}
+
+@layer components {
+    .page-container {
+        @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+    }
+
+    .eyebrow {
+        @apply font-mono text-xs font-medium uppercase tracking-[0.18em];
+    }
+
+    .button-primary {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-brand-blue-600 px-5 py-3 font-semibold text-white transition hover:bg-brand-blue-700 focus-visible:ring-3 focus-visible:ring-brand-blue-600/35 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .button-secondary {
+        @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-blue-900/20 bg-white px-5 py-3 font-semibold text-brand-blue-900 transition hover:border-brand-blue-900/40 hover:bg-brand-blue-50 focus-visible:ring-3 focus-visible:ring-brand-blue-600/35 disabled:cursor-not-allowed disabled:opacity-60;
+    }
+
+    .form-input {
+        @apply min-h-11 w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-base text-ink-900 shadow-sm placeholder:text-slate-400 hover:border-slate-400 focus:border-brand-blue-600 focus:ring-3 focus:ring-brand-blue-600/20 disabled:cursor-not-allowed disabled:bg-slate-100;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

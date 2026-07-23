@@ -1,0 +1,548 @@
+{
+    "meta": {
+        "homeTitle": "Your administrative procedures",
+        "loginTitle": "Sign in to my account",
+        "agentLoginTitle": "Agent sign in",
+        "registerTitle": "Create my account",
+        "forgotPasswordTitle": "Forgotten password",
+        "resetPasswordTitle": "Choose a new password",
+        "verifyEmailTitle": "Verify my email address",
+        "confirmPasswordTitle": "Confirm my password",
+        "twoFactorTitle": "Two-step verification",
+        "accountTitle": "My account",
+        "profileTitle": "My profile",
+        "agentDashboardTitle": "Agent workspace",
+        "agentSecurityTitle": "Agent account security",
+        "adminTitle": "Administration",
+        "catalogTitle": "Service catalogue",
+        "procedureTitle": "Procedure details",
+        "catalogAdminTitle": "Catalogue administration",
+        "procedureEditorTitle": "Procedure editor",
+        "startApplicationTitle": "Start the procedure",
+        "applicationDraftTitle": "My draft"
+    },
+    "common": {
+        "brand": "AppGov",
+        "republic": "Republic of Cameroon",
+        "motto": "Peace — Work — Fatherland",
+        "skipToContent": "Skip to main content",
+        "french": "FR",
+        "english": "EN",
+        "changeLanguage": "Change language",
+        "demo": "DEMO",
+        "soon": "Soon",
+        "processing": "Processing…",
+        "skeleton": "Foundation ready",
+        "previous": "Previous",
+        "next": "Next",
+        "pageCount": "Page {current} of {last}",
+        "required": "Required",
+        "optional": "Optional",
+        "remove": "Remove",
+        "add": "Add",
+        "save": "Save draft",
+        "version": "Version {number}",
+        "back": "Back"
+    },
+    "nav": {
+        "services": "Services",
+        "howItWorks": "How it works",
+        "tracking": "Track an application",
+        "account": "My account"
+    },
+    "fields": {
+        "firstName": "Given name(s)",
+        "lastName": "Family name",
+        "email": "Email address",
+        "password": "Password",
+        "passwordConfirmation": "Confirm password",
+        "phone": "Phone number",
+        "preferredLanguage": "Communication language",
+        "authenticationCode": "6-digit code",
+        "recoveryCode": "Recovery code"
+    },
+    "languages": {
+        "fr": "French",
+        "en": "English"
+    },
+    "validation": {
+        "required": "Complete this field.",
+        "email": "Enter a valid and available email address.",
+        "password": "Enter your password.",
+        "strongPassword": "Use at least 12 characters with uppercase, lowercase and a number.",
+        "passwordConfirmation": "Both passwords must match.",
+        "phone": "Enter a valid phone number.",
+        "terms": "You must accept these terms to create the account."
+    },
+    "authLayout": {
+        "citizen": {
+            "eyebrow": "Your digital register",
+            "title": "One account to keep track of every procedure.",
+            "points": [
+                "Your applications and results remain available in a private space.",
+                "Every important change is dated and explained.",
+                "Your email address is verified before any submission."
+            ]
+        },
+        "agent": {
+            "eyebrow": "Professional access",
+            "title": "A workspace isolated by authorisation.",
+            "points": [
+                "Access depends on your role and active assignment.",
+                "Two-step verification is mandatory.",
+                "Sensitive operations leave an audit record."
+            ]
+        },
+        "secureSession": "Protected, time-limited session"
+    },
+    "auth": {
+        "backToLogin": "Back to sign in",
+        "logout": "Sign out",
+        "login": {
+            "eyebrow": "Citizen account",
+            "title": "Find your procedures",
+            "description": "Sign in with the email address used to create your account.",
+            "agentEyebrow": "Restricted portal",
+            "agentTitle": "Authorised agent sign in",
+            "agentDescription": "This access is reserved for accounts created and assigned by an administration.",
+            "remember": "Keep me signed in on this device",
+            "forgot": "Forgotten password?",
+            "submit": "Sign in",
+            "noAccount": "Do not have an account yet?",
+            "register": "Create my account",
+            "agentHelp": "Your agent account is provided by your administration. Never share your password or temporary code.",
+            "invalidCredentials": "These details cannot open this workspace.",
+            "passwordResetSuccess": "Your password was changed. You can now sign in."
+        },
+        "register": {
+            "eyebrow": "New citizen account",
+            "title": "Create your secure account",
+            "description": "Only a few details are needed. You will then verify your email before starting a procedure.",
+            "passwordHint": "At least 12 characters with uppercase, lowercase and a number.",
+            "terms": "I confirm that the information provided concerns me and I accept the platform terms of use.",
+            "submit": "Create my account",
+            "hasAccount": "Already have an account?",
+            "login": "Sign in"
+        },
+        "forgot": {
+            "eyebrow": "Account recovery",
+            "title": "Reset your password",
+            "description": "Enter your email address. If a matching account exists, a temporary link will be sent.",
+            "submit": "Send the link",
+            "sent": "If this address matches an account, a reset link has just been sent."
+        },
+        "reset": {
+            "eyebrow": "Account security",
+            "title": "Choose a new password",
+            "description": "The link you received is temporary and can only be used once.",
+            "submit": "Save the new password"
+        },
+        "verify": {
+            "eyebrow": "First verification",
+            "title": "Verify your email address",
+            "description": "This step protects your account and confirms that you can receive information about your procedures.",
+            "instructions": "Open the AppGov message sent to this address and select the verification link.",
+            "sent": "A new verification link has just been sent.",
+            "resend": "Send the link again"
+        },
+        "confirm": {
+            "eyebrow": "Sensitive action",
+            "title": "Confirm your password",
+            "description": "To protect your account, this action requires confirmation.",
+            "invalid": "This password does not match your account.",
+            "submit": "Confirm"
+        },
+        "twoFactor": {
+            "eyebrow": "Second factor",
+            "title": "Confirm sign in",
+            "description": "Enter the temporary code displayed by your authentication app.",
+            "recoveryDescription": "Enter one of the recovery codes saved during activation.",
+            "codeHint": "The code usually changes every 30 seconds.",
+            "invalid": "This code is invalid or has expired.",
+            "invalidRecovery": "This recovery code is invalid or has already been used.",
+            "submit": "Verify and continue",
+            "useRecovery": "Use a recovery code",
+            "useCode": "Use the app code"
+        }
+    },
+    "identity": {
+        "cardEyebrow": "Identity level",
+        "levels": {
+            "unverified": "Email not verified",
+            "email_verified": "Email verified",
+            "identity_declared": "Identity declared",
+            "identity_checked": "Identity checked"
+        },
+        "explanations": {
+            "unverified": "Verify your email address to secure the account.",
+            "email_verified": "Your email is confirmed. Complete your profile to declare your identity.",
+            "identity_declared": "Your identity is declared. It has not yet been checked against documents.",
+            "identity_checked": "Your identity has been checked by an authorised authority."
+        },
+        "noOfficialCheck": "This level only describes checks that were actually performed. It does not replace any official document."
+    },
+    "account": {
+        "navigation": "Citizen account navigation",
+        "dashboard": {
+            "nav": "Dashboard",
+            "eyebrow": "Citizen account",
+            "title": "My procedures",
+            "applicationsTitle": "Recent applications",
+            "emptyTitle": "No application yet",
+            "emptyDescription": "When a procedure opens, your drafts and submitted applications will appear here with their next action.",
+            "explore": "View services",
+            "identityTitle": "Your identity in AppGov",
+            "completeProfile": "Complete my profile",
+            "reviewProfile": "Review my profile",
+            "securityTitle": "Your information remains private",
+            "securityDescription": "Detailed results and personal data are never displayed by public tracking."
+        },
+        "profile": {
+            "nav": "My profile",
+            "eyebrow": "Declared identity",
+            "title": "My information",
+            "emailHint": "Changing the email address will require a new verification.",
+            "phoneHint": "Prefer the international format, for example +237.",
+            "save": "Save changes",
+            "saved": "Profile changes were saved."
+        }
+    },
+    "agent": {
+        "portal": "Agent workspace",
+        "portalShort": "Agents",
+        "navigation": "Agent workspace navigation",
+        "secureWorkspace": "Secure professional workspace",
+        "nav": {
+            "workspace": "Overview",
+            "applications": "Applications",
+            "catalog": "Catalogue",
+            "security": "Security"
+        },
+        "dashboard": {
+            "title": "Overview",
+            "organization": "Organisation and unit",
+            "territory": "Authorised territory",
+            "nationalScope": "National scope",
+            "pendingApplications": "applications waiting within your scope",
+            "queueTitle": "Work queue",
+            "scopeNotice": "Limited to your assignment",
+            "emptyTitle": "No assigned application",
+            "emptyDescription": "Applications matching your organisation, unit, territory and permissions will appear here."
+        },
+        "security": {
+            "title": "Account security",
+            "twoFactorTitle": "Two-step verification",
+            "twoFactorDescription": "The agent portal requires a temporary code in addition to the password for every new sign in.",
+            "active": "Active",
+            "required": "Required",
+            "startTitle": "Link an authentication app",
+            "startDescription": "Use a trusted TOTP app on your work phone. Application access remains blocked until confirmation.",
+            "enable": "Start activation",
+            "step": "Step 2 of 2",
+            "scanTitle": "Scan then confirm",
+            "scanDescription": "Scan this QR code in your app, then enter the resulting 6-digit code.",
+            "manualKey": "Manual entry key",
+            "confirm": "Confirm activation",
+            "confirmedMessage": "Two-step verification is now active.",
+            "readyTitle": "Your agent access is protected",
+            "readyDescription": "The next sign in will request your password followed by a temporary code.",
+            "openWorkspace": "Open the agent workspace",
+            "recoveryTitle": "Recovery codes",
+            "recoveryDescription": "Keep these codes offline in a safe location. Each code only works once.",
+            "recoveryAfter": "The codes will appear after activation is confirmed."
+        }
+    },
+    "admin": {
+        "open": "Open administration",
+        "title": "Platform administration",
+        "description": "This foundation prepares controlled management of organisations, territories, agents and authorisations. Editing screens will be delivered with their audit rules.",
+        "modules": {
+            "organizations": {
+                "title": "Organisations and units",
+                "description": "Administrative structure and processing units."
+            },
+            "territories": {
+                "title": "Territories",
+                "description": "Region, department and municipality hierarchy."
+            },
+            "agents": {
+                "title": "Agents and assignments",
+                "description": "Professional accounts and active scopes."
+            },
+            "permissions": {
+                "title": "Roles and permissions",
+                "description": "Authorisations based on least privilege."
+            }
+        }
+    },
+    "errors": {
+        "forbidden": {
+            "title": "Access not authorised",
+            "description": "Your account does not have the authorisation required to open this workspace."
+        },
+        "backHome": "Back to home"
+    },
+    "home": {
+        "eyebrow": "Administrative services portal",
+        "title": "Public services with a clear application at every step.",
+        "intro": "Understand the procedure, prepare your documents and track your request from one secure space.",
+        "explore": "Explore services",
+        "seeTracking": "See tracking",
+        "digitalFirst": "A fully digital journey",
+        "digitalFirstText": "Every submission, review and decision leaves a dated record. You always know what was done and what comes next.",
+        "servicesEyebrow": "Digital service desk",
+        "servicesTitle": "One simple entry point for every public service",
+        "servicesIntro": "Driving licences launch the platform. Other procedures will progressively join the same space.",
+        "firstService": "First service",
+        "plannedService": "Planned service",
+        "processEyebrow": "Transparent journey",
+        "processTitle": "The application moves forward, you keep track",
+        "processIntro": "The application rail separates completed steps, the current step and the next required action.",
+        "currentStep": "Current step",
+        "nextStep": "Next step",
+        "referenceLabel": "Demonstration reference",
+        "reference": "CM-PDC-2026-7K9M4X-Q",
+        "trackingNotice": "The data shown here demonstrates the interface and does not represent a real application.",
+        "prepareTitle": "Your secure account is ready",
+        "prepareText": "Create your account, verify your email address and prepare your profile before the first procedure opens.",
+        "footerNote": "Demonstration platform under construction."
+    },
+    "services": {
+        "mobility": {
+            "name": "Mobility",
+            "description": "Driving licences and driving-related services."
+        },
+        "immigration": {
+            "name": "Residence and immigration",
+            "description": "Residence permit applications and renewals."
+        },
+        "nationality": {
+            "name": "Nationality",
+            "description": "Naturalisation and related procedures."
+        },
+        "education": {
+            "name": "Education",
+            "description": "Diplomas, duplicates and authentication."
+        },
+        "civil": {
+            "name": "Civil status",
+            "description": "Civil records, certificates and documents."
+        },
+        "business": {
+            "name": "Economic activity",
+            "description": "Authorisations, licences and business formalities."
+        }
+    },
+    "tracking": {
+        "progressLabel": "Application progress",
+        "submitted": "Application submitted",
+        "documents": "Documents checked",
+        "exam": "Examination in progress",
+        "decision": "Decision",
+        "production": "Document production",
+        "submittedDate": "12 July",
+        "documentsDate": "14 July",
+        "examDate": "Today"
+    },
+    "catalog": {
+        "index": {
+            "eyebrow": "Digital service desk",
+            "title": "Find the procedure that fits your need.",
+            "intro": "Search for a service and review its steps, requested information and published fees before creating an application.",
+            "searchLabel": "Which procedure are you looking for?",
+            "searchPlaceholder": "E.g. driving licence, diploma…",
+            "search": "Search",
+            "allCategories": "All categories",
+            "results": "{count} procedure available | {count} procedures available",
+            "emptyTitle": "No procedure matches",
+            "emptyDescription": "Change your search terms or select another category.",
+            "clearFilters": "Clear filters",
+            "open": "View the procedure",
+            "publishedVersion": "Published version {number}"
+        },
+        "detail": {
+            "back": "All procedures",
+            "demoTitle": "Demonstration procedure",
+            "demoNotice": "This content is used to validate the platform. It is not an official Cameroonian procedure, fee or rule.",
+            "responsible": "Responsible administration",
+            "effectiveFrom": "Effective in the demonstration since {date}",
+            "about": "What this procedure provides",
+            "eligibility": "Eligibility",
+            "steps": "Planned journey",
+            "stepsIntro": "Steps are displayed in their processing order.",
+            "requestedInformation": "Requested information",
+            "documents": "Documents to prepare",
+            "rules": "Configured rules",
+            "fees": "Published fees",
+            "noFees": "No fee is configured for this version.",
+            "feeMoment": "Expected moment: {moment}",
+            "legalBasis": "Legal basis",
+            "startTitle": "Ready to create your application?",
+            "startText": "An account with a verified email address is required. Your draft will remain private.",
+            "start": "Start this procedure"
+        },
+        "status": {
+            "draft": "Draft",
+            "under_review": "Under review",
+            "published": "Published",
+            "retired": "Retired"
+        },
+        "statusHelp": {
+            "draft": "The definition may still be edited.",
+            "under_review": "The content is awaiting independent approval.",
+            "published": "The version is immutable and can receive new applications.",
+            "retired": "No new application can use this version."
+        },
+        "admin": {
+            "eyebrow": "Versioned configuration",
+            "title": "Service catalogue",
+            "intro": "Each service belongs to your organisation. Its content remains editable as a draft and is locked after independent review.",
+            "newService": "Create a service",
+            "newServiceIntro": "Creation automatically opens a first draft version.",
+            "newCategory": "Add a category",
+            "newCategoryIntro": "Categories are shared by the catalogue. Only use a colour provided by the design system.",
+            "categoryColor": "Service colour",
+            "sortOrder": "Display order",
+            "createCategory": "Add category",
+            "categoryCreated": "The category was added to the catalogue.",
+            "organization": "Owning organisation",
+            "category": "Category",
+            "code": "Stable code",
+            "codeHint": "Uppercase letters, numbers, hyphens and underscores only.",
+            "nameFr": "French name",
+            "nameEn": "English name",
+            "descriptionFr": "French description",
+            "descriptionEn": "English description",
+            "create": "Create and configure",
+            "servicesTitle": "Services in your scope",
+            "emptyTitle": "No service in this scope",
+            "emptyDescription": "Create the first service, then complete its procedure.",
+            "openVersion": "Configure version",
+            "active": "Active",
+            "created": "The service and its first version were created.",
+            "saved": "The draft was saved.",
+            "submitted": "The version was sent for review.",
+            "returned": "The version was returned to draft.",
+            "published": "The version was published.",
+            "retired": "The version was retired.",
+            "versionCreated": "A new draft version was created."
+        },
+        "editor": {
+            "back": "Back to catalogue",
+            "registry": "Configuration register",
+            "title": "Version {number} · {service}",
+            "owner": "Owning organisation",
+            "immutableNotice": "This version’s content is locked. Create a new version to change it.",
+            "reviewNote": "Reason for the latest return: {note}",
+            "errorsTitle": "Correct the following points before saving:",
+            "identitySection": "Public information",
+            "titleFr": "French title",
+            "titleEn": "English title",
+            "summaryFr": "French summary",
+            "summaryEn": "English summary",
+            "descriptionFr": "Detailed French description",
+            "descriptionEn": "Detailed English description",
+            "eligibilityFr": "French eligibility",
+            "eligibilityEn": "English eligibility",
+            "legalBasisFr": "French legal basis",
+            "legalBasisEn": "English legal basis",
+            "effectiveFrom": "Effective date",
+            "demoLabel": "This version only contains unofficial DEMO data",
+            "steps": "Steps",
+            "stepsHelp": "The order below becomes the journey shown to citizens.",
+            "fields": "Form fields",
+            "documents": "Requested documents",
+            "rules": "Rules",
+            "fees": "Fees",
+            "item": "Item {number}",
+            "step": "Step {number}",
+            "stepCode": "Related step",
+            "nameFr": "French label",
+            "nameEn": "English label",
+            "descriptionFr": "French explanation",
+            "descriptionEn": "English explanation",
+            "type": "Type",
+            "isRequired": "Required item",
+            "fieldCode": "Field code",
+            "helpFr": "French help",
+            "helpEn": "English help",
+            "optionsFr": "French choices",
+            "optionsEn": "English choices",
+            "optionsHint": "One choice per line, in the same order for both languages.",
+            "documentCode": "Document code",
+            "ruleCode": "Rule code",
+            "feeCode": "Fee code",
+            "amountMinor": "Amount in the smallest currency unit",
+            "currency": "ISO 4217 currency",
+            "minorUnitExponent": "Currency decimal places",
+            "dueWhenFr": "French payment moment",
+            "dueWhenEn": "English payment moment",
+            "legalBasisFeeFr": "French fee legal basis",
+            "legalBasisFeeEn": "English fee legal basis",
+            "mandatoryFee": "Mandatory payment",
+            "addStep": "Add a step",
+            "addField": "Add a field",
+            "addDocument": "Add a document",
+            "addRule": "Add a rule",
+            "addFee": "Add a fee",
+            "workflow": "Publication cycle",
+            "submitReview": "Send for review",
+            "publish": "Publish version",
+            "returnReason": "Requested corrections",
+            "returnReasonHint": "Explain precisely what must be corrected.",
+            "returnDraft": "Return to draft",
+            "retireReason": "Retirement reason",
+            "retire": "Retire version",
+            "newVersion": "Create a new version",
+            "versions": "Version history",
+            "saveBeforeTransition": "Save the draft before sending it for review."
+        },
+        "stepTypes": {
+            "form": "Form",
+            "review": "Review",
+            "payment": "Payment",
+            "appointment": "Appointment",
+            "examination": "Examination",
+            "decision": "Decision",
+            "production": "Production",
+            "delivery": "Delivery"
+        },
+        "fieldTypes": {
+            "text": "Short text",
+            "textarea": "Long text",
+            "select": "List",
+            "radio": "Single choice",
+            "checkbox": "Checkbox",
+            "date": "Date",
+            "number": "Number",
+            "email": "Email address",
+            "tel": "Telephone"
+        },
+        "ruleTypes": {
+            "eligibility": "Eligibility",
+            "validation": "Validation",
+            "transition": "Step transition"
+        }
+    },
+    "applications": {
+        "start": {
+            "eyebrow": "Before you start",
+            "title": "Create a draft",
+            "intro": "Review the selected procedure version. Creating a draft does not submit the application or trigger any payment.",
+            "version": "Version used",
+            "private": "This draft is private and linked to your account.",
+            "demoWarning": "You are about to create a demonstration application with no administrative value.",
+            "confirm": "Create my draft"
+        },
+        "draft": {
+            "eyebrow": "Application in preparation",
+            "title": "Your draft is created",
+            "status": "Draft",
+            "statusHelp": "No information has been sent to an administration yet.",
+            "started": "Started on {date}",
+            "nextTitle": "Next action",
+            "nextText": "The form for this procedure will be added in the next delivery. Your procedure selection is already saved.",
+            "backCatalog": "View other procedures"
+        }
+    }
+}

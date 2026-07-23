@@ -1,0 +1,548 @@
+{
+    "meta": {
+        "homeTitle": "Vos démarches administratives",
+        "loginTitle": "Connexion à mon espace",
+        "agentLoginTitle": "Connexion agent",
+        "registerTitle": "Créer mon compte",
+        "forgotPasswordTitle": "Mot de passe oublié",
+        "resetPasswordTitle": "Choisir un nouveau mot de passe",
+        "verifyEmailTitle": "Vérifier mon adresse e-mail",
+        "confirmPasswordTitle": "Confirmer mon mot de passe",
+        "twoFactorTitle": "Vérification en deux étapes",
+        "accountTitle": "Mon espace",
+        "profileTitle": "Mon profil",
+        "agentDashboardTitle": "Espace agent",
+        "agentSecurityTitle": "Sécurité du compte agent",
+        "adminTitle": "Administration",
+        "catalogTitle": "Catalogue des démarches",
+        "procedureTitle": "Fiche de la démarche",
+        "catalogAdminTitle": "Administration du catalogue",
+        "procedureEditorTitle": "Éditeur de procédure",
+        "startApplicationTitle": "Commencer la démarche",
+        "applicationDraftTitle": "Mon brouillon"
+    },
+    "common": {
+        "brand": "AppGov",
+        "republic": "République du Cameroun",
+        "motto": "Paix — Travail — Patrie",
+        "skipToContent": "Aller au contenu principal",
+        "french": "FR",
+        "english": "EN",
+        "changeLanguage": "Changer la langue",
+        "demo": "DÉMO",
+        "soon": "Bientôt",
+        "processing": "Traitement en cours…",
+        "skeleton": "Socle prêt",
+        "previous": "Précédent",
+        "next": "Suivant",
+        "pageCount": "Page {current} sur {last}",
+        "required": "Obligatoire",
+        "optional": "Facultatif",
+        "remove": "Retirer",
+        "add": "Ajouter",
+        "save": "Enregistrer le brouillon",
+        "version": "Version {number}",
+        "back": "Retour"
+    },
+    "nav": {
+        "services": "Démarches",
+        "howItWorks": "Comment ça marche",
+        "tracking": "Suivre un dossier",
+        "account": "Mon espace"
+    },
+    "fields": {
+        "firstName": "Prénom(s)",
+        "lastName": "Nom",
+        "email": "Adresse e-mail",
+        "password": "Mot de passe",
+        "passwordConfirmation": "Confirmer le mot de passe",
+        "phone": "Numéro de téléphone",
+        "preferredLanguage": "Langue de communication",
+        "authenticationCode": "Code à 6 chiffres",
+        "recoveryCode": "Code de récupération"
+    },
+    "languages": {
+        "fr": "Français",
+        "en": "Anglais"
+    },
+    "validation": {
+        "required": "Renseignez ce champ.",
+        "email": "Saisissez une adresse e-mail valide et disponible.",
+        "password": "Renseignez votre mot de passe.",
+        "strongPassword": "Utilisez au moins 12 caractères, avec majuscule, minuscule et chiffre.",
+        "passwordConfirmation": "Les deux mots de passe doivent être identiques.",
+        "phone": "Saisissez un numéro de téléphone valide.",
+        "terms": "Vous devez accepter ces conditions pour créer le compte."
+    },
+    "authLayout": {
+        "citizen": {
+            "eyebrow": "Votre registre numérique",
+            "title": "Un compte pour garder la trace de chaque démarche.",
+            "points": [
+                "Vos dossiers et résultats restent accessibles dans un espace privé.",
+                "Chaque changement important est daté et expliqué.",
+                "Votre adresse e-mail est vérifiée avant tout dépôt."
+            ]
+        },
+        "agent": {
+            "eyebrow": "Accès professionnel",
+            "title": "Un espace de travail cloisonné par habilitation.",
+            "points": [
+                "L’accès dépend de votre rôle et de votre affectation active.",
+                "La vérification en deux étapes est obligatoire.",
+                "Les opérations sensibles laissent une trace d’audit."
+            ]
+        },
+        "secureSession": "Session protégée et limitée dans le temps"
+    },
+    "auth": {
+        "backToLogin": "Revenir à la connexion",
+        "logout": "Se déconnecter",
+        "login": {
+            "eyebrow": "Espace usager",
+            "title": "Retrouvez vos démarches",
+            "description": "Connectez-vous avec l’adresse e-mail utilisée lors de la création de votre compte.",
+            "agentEyebrow": "Portail réservé",
+            "agentTitle": "Connexion des agents habilités",
+            "agentDescription": "Cet accès est réservé aux comptes créés et affectés par une administration.",
+            "remember": "Rester connecté sur cet appareil",
+            "forgot": "Mot de passe oublié ?",
+            "submit": "Se connecter",
+            "noAccount": "Vous n’avez pas encore de compte ?",
+            "register": "Créer mon compte",
+            "agentHelp": "Votre compte agent est fourni par votre administration. Ne partagez jamais votre mot de passe ni votre code temporaire.",
+            "invalidCredentials": "Ces informations ne permettent pas d’ouvrir cet espace.",
+            "passwordResetSuccess": "Votre mot de passe a été modifié. Vous pouvez maintenant vous connecter."
+        },
+        "register": {
+            "eyebrow": "Nouveau compte usager",
+            "title": "Créez votre espace sécurisé",
+            "description": "Quelques informations suffisent. Vous vérifierez ensuite votre adresse e-mail avant de commencer une démarche.",
+            "passwordHint": "12 caractères minimum, avec une majuscule, une minuscule et un chiffre.",
+            "terms": "Je confirme que les informations fournies me concernent et j’accepte les conditions d’utilisation de la plateforme.",
+            "submit": "Créer mon compte",
+            "hasAccount": "Vous avez déjà un compte ?",
+            "login": "Se connecter"
+        },
+        "forgot": {
+            "eyebrow": "Récupération du compte",
+            "title": "Réinitialisez votre mot de passe",
+            "description": "Indiquez votre adresse e-mail. Si un compte correspondant existe, un lien temporaire vous sera envoyé.",
+            "submit": "Envoyer le lien",
+            "sent": "Si cette adresse correspond à un compte, un lien de réinitialisation vient d’être envoyé."
+        },
+        "reset": {
+            "eyebrow": "Sécurité du compte",
+            "title": "Choisissez un nouveau mot de passe",
+            "description": "Le lien reçu est temporaire et ne peut servir qu’une seule fois.",
+            "submit": "Enregistrer le nouveau mot de passe"
+        },
+        "verify": {
+            "eyebrow": "Première vérification",
+            "title": "Vérifiez votre adresse e-mail",
+            "description": "Cette étape protège votre compte et confirme que vous pouvez recevoir les informations liées à vos démarches.",
+            "instructions": "Ouvrez le message AppGov reçu à cette adresse puis cliquez sur le lien de vérification.",
+            "sent": "Un nouveau lien de vérification vient d’être envoyé.",
+            "resend": "Renvoyer le lien"
+        },
+        "confirm": {
+            "eyebrow": "Action sensible",
+            "title": "Confirmez votre mot de passe",
+            "description": "Pour protéger votre compte, cette action demande une nouvelle confirmation.",
+            "invalid": "Ce mot de passe ne correspond pas à votre compte.",
+            "submit": "Confirmer"
+        },
+        "twoFactor": {
+            "eyebrow": "Deuxième facteur",
+            "title": "Confirmez la connexion",
+            "description": "Saisissez le code temporaire affiché dans votre application d’authentification.",
+            "recoveryDescription": "Saisissez l’un des codes de récupération conservés lors de l’activation.",
+            "codeHint": "Le code change généralement toutes les 30 secondes.",
+            "invalid": "Ce code est invalide ou a expiré.",
+            "invalidRecovery": "Ce code de récupération est invalide ou déjà utilisé.",
+            "submit": "Vérifier et continuer",
+            "useRecovery": "Utiliser un code de récupération",
+            "useCode": "Utiliser le code de l’application"
+        }
+    },
+    "identity": {
+        "cardEyebrow": "Niveau d’identité",
+        "levels": {
+            "unverified": "E-mail non vérifié",
+            "email_verified": "E-mail vérifié",
+            "identity_declared": "Identité déclarée",
+            "identity_checked": "Identité contrôlée"
+        },
+        "explanations": {
+            "unverified": "Vérifiez votre adresse e-mail pour sécuriser le compte.",
+            "email_verified": "Votre adresse e-mail est confirmée. Complétez votre profil pour déclarer votre identité.",
+            "identity_declared": "Votre identité est déclarée. Elle n’a pas encore été contrôlée sur pièces.",
+            "identity_checked": "Votre identité a été contrôlée par une autorité habilitée."
+        },
+        "noOfficialCheck": "Ce niveau décrit uniquement les vérifications réellement effectuées. Il ne remplace aucun document officiel."
+    },
+    "account": {
+        "navigation": "Navigation de l’espace usager",
+        "dashboard": {
+            "nav": "Tableau de bord",
+            "eyebrow": "Espace usager",
+            "title": "Mes démarches",
+            "applicationsTitle": "Dossiers récents",
+            "emptyTitle": "Aucun dossier pour le moment",
+            "emptyDescription": "Quand une démarche sera ouverte, vos brouillons et dossiers déposés apparaîtront ici avec leur prochaine action.",
+            "explore": "Voir les démarches",
+            "identityTitle": "Votre identité dans AppGov",
+            "completeProfile": "Compléter mon profil",
+            "reviewProfile": "Vérifier mon profil",
+            "securityTitle": "Vos informations restent privées",
+            "securityDescription": "Les résultats détaillés et les données personnelles ne sont jamais affichés dans le suivi public."
+        },
+        "profile": {
+            "nav": "Mon profil",
+            "eyebrow": "Identité déclarée",
+            "title": "Mes informations",
+            "emailHint": "Une modification de l’adresse e-mail demandera une nouvelle vérification.",
+            "phoneHint": "Utilisez de préférence le format international, par exemple +237.",
+            "save": "Enregistrer les modifications",
+            "saved": "Les modifications du profil ont été enregistrées."
+        }
+    },
+    "agent": {
+        "portal": "Espace agent",
+        "portalShort": "Agents",
+        "navigation": "Navigation de l’espace agent",
+        "secureWorkspace": "Espace professionnel sécurisé",
+        "nav": {
+            "workspace": "Vue d’ensemble",
+            "applications": "Dossiers",
+            "catalog": "Catalogue",
+            "security": "Sécurité"
+        },
+        "dashboard": {
+            "title": "Vue d’ensemble",
+            "organization": "Organisme et unité",
+            "territory": "Territoire autorisé",
+            "nationalScope": "Périmètre national",
+            "pendingApplications": "dossiers en attente dans votre périmètre",
+            "queueTitle": "File de travail",
+            "scopeNotice": "Limitée à votre affectation",
+            "emptyTitle": "Aucun dossier attribué",
+            "emptyDescription": "Les dossiers compatibles avec votre organisme, votre unité, votre territoire et vos permissions apparaîtront ici."
+        },
+        "security": {
+            "title": "Sécurité du compte",
+            "twoFactorTitle": "Vérification en deux étapes",
+            "twoFactorDescription": "Le portail agent exige un code temporaire en plus du mot de passe à chaque nouvelle connexion.",
+            "active": "Active",
+            "required": "Obligatoire",
+            "startTitle": "Associez une application d’authentification",
+            "startDescription": "Utilisez une application TOTP reconnue sur votre téléphone professionnel. Aucun accès aux dossiers n’est possible avant la confirmation.",
+            "enable": "Commencer l’activation",
+            "step": "Étape 2 sur 2",
+            "scanTitle": "Scannez puis confirmez",
+            "scanDescription": "Scannez ce QR code dans votre application, puis saisissez le code à 6 chiffres obtenu.",
+            "manualKey": "Clé de saisie manuelle",
+            "confirm": "Confirmer l’activation",
+            "confirmedMessage": "La vérification en deux étapes est maintenant active.",
+            "readyTitle": "Votre accès agent est protégé",
+            "readyDescription": "La prochaine connexion demandera votre mot de passe puis un code temporaire.",
+            "openWorkspace": "Ouvrir l’espace agent",
+            "recoveryTitle": "Codes de récupération",
+            "recoveryDescription": "Conservez ces codes hors ligne dans un emplacement sûr. Chaque code ne fonctionne qu’une seule fois.",
+            "recoveryAfter": "Les codes apparaîtront après la confirmation de l’activation."
+        }
+    },
+    "admin": {
+        "open": "Ouvrir l’administration",
+        "title": "Administration de la plateforme",
+        "description": "Ce socle prépare la gestion contrôlée des organismes, territoires, agents et habilitations. Les écrans de modification seront livrés avec leurs règles d’audit.",
+        "modules": {
+            "organizations": {
+                "title": "Organismes et unités",
+                "description": "Structure administrative et unités de traitement."
+            },
+            "territories": {
+                "title": "Territoires",
+                "description": "Hiérarchie région, département et commune."
+            },
+            "agents": {
+                "title": "Agents et affectations",
+                "description": "Comptes professionnels et périmètres actifs."
+            },
+            "permissions": {
+                "title": "Rôles et permissions",
+                "description": "Habilitations fondées sur le moindre privilège."
+            }
+        }
+    },
+    "errors": {
+        "forbidden": {
+            "title": "Accès non autorisé",
+            "description": "Votre compte ne possède pas l’habilitation nécessaire pour ouvrir cet espace."
+        },
+        "backHome": "Revenir à l’accueil"
+    },
+    "home": {
+        "eyebrow": "Portail des démarches administratives",
+        "title": "Vos démarches publiques, un dossier clair à chaque étape.",
+        "intro": "Comprenez la procédure, préparez vos pièces et suivez l’évolution de votre demande depuis un seul espace sécurisé.",
+        "explore": "Découvrir les démarches",
+        "seeTracking": "Voir le suivi",
+        "digitalFirst": "Un parcours numérique de bout en bout",
+        "digitalFirstText": "Chaque dépôt, contrôle et décision laisse une trace datée. Vous savez toujours ce qui a été fait et ce qui vient ensuite.",
+        "servicesEyebrow": "Guichet numérique",
+        "servicesTitle": "Une entrée simple pour chaque service public",
+        "servicesIntro": "Le permis de conduire ouvre la plateforme. Les autres démarches rejoindront progressivement le même espace.",
+        "firstService": "Premier service",
+        "plannedService": "Service planifié",
+        "processEyebrow": "Parcours transparent",
+        "processTitle": "Le dossier avance, vous gardez le fil",
+        "processIntro": "Le rail du dossier distingue les étapes terminées, l’étape actuelle et la prochaine action attendue.",
+        "currentStep": "Étape actuelle",
+        "nextStep": "Prochaine étape",
+        "referenceLabel": "Référence de démonstration",
+        "reference": "CM-PDC-2026-7K9M4X-Q",
+        "trackingNotice": "Les données présentées ici sont une démonstration de l’interface, pas un dossier réel.",
+        "prepareTitle": "Votre espace sécurisé est prêt",
+        "prepareText": "Créez votre compte, vérifiez votre adresse e-mail et préparez votre profil avant l’ouverture de la première démarche.",
+        "footerNote": "Plateforme de démonstration en cours de construction."
+    },
+    "services": {
+        "mobility": {
+            "name": "Mobilité",
+            "description": "Permis de conduire et services liés à la conduite."
+        },
+        "immigration": {
+            "name": "Séjour et immigration",
+            "description": "Demandes et renouvellements de titres de séjour."
+        },
+        "nationality": {
+            "name": "Nationalité",
+            "description": "Naturalisation et procédures associées."
+        },
+        "education": {
+            "name": "Éducation",
+            "description": "Diplômes, duplicatas et authentifications."
+        },
+        "civil": {
+            "name": "État civil",
+            "description": "Actes, certificats et documents d’état civil."
+        },
+        "business": {
+            "name": "Activité économique",
+            "description": "Autorisations, licences et formalités professionnelles."
+        }
+    },
+    "tracking": {
+        "progressLabel": "Progression du dossier",
+        "submitted": "Dossier déposé",
+        "documents": "Pièces contrôlées",
+        "exam": "Examen en cours",
+        "decision": "Décision",
+        "production": "Production du titre",
+        "submittedDate": "12 juillet",
+        "documentsDate": "14 juillet",
+        "examDate": "Aujourd’hui"
+    },
+    "catalog": {
+        "index": {
+            "eyebrow": "Guichet numérique",
+            "title": "Trouvez la démarche adaptée à votre besoin.",
+            "intro": "Recherchez un service, consultez ses étapes, les informations demandées et les tarifs publiés avant de créer un dossier.",
+            "searchLabel": "Quelle démarche recherchez-vous ?",
+            "searchPlaceholder": "Ex. permis de conduire, diplôme…",
+            "search": "Rechercher",
+            "allCategories": "Toutes les catégories",
+            "results": "{count} démarche disponible | {count} démarches disponibles",
+            "emptyTitle": "Aucune démarche ne correspond",
+            "emptyDescription": "Modifiez les mots recherchés ou sélectionnez une autre catégorie.",
+            "clearFilters": "Effacer les filtres",
+            "open": "Consulter la procédure",
+            "publishedVersion": "Version publiée {number}"
+        },
+        "detail": {
+            "back": "Toutes les démarches",
+            "demoTitle": "Procédure de démonstration",
+            "demoNotice": "Ce contenu sert à valider la plateforme. Il ne constitue ni une procédure, ni un tarif, ni une règle officielle du Cameroun.",
+            "responsible": "Administration responsable",
+            "effectiveFrom": "Applicable dans la démonstration depuis le {date}",
+            "about": "Ce que prévoit cette démarche",
+            "eligibility": "Conditions d’accès",
+            "steps": "Parcours prévu",
+            "stepsIntro": "Les étapes sont affichées dans leur ordre de traitement.",
+            "requestedInformation": "Informations demandées",
+            "documents": "Pièces à préparer",
+            "rules": "Règles configurées",
+            "fees": "Tarifs publiés",
+            "noFees": "Aucun tarif n’est configuré pour cette version.",
+            "feeMoment": "Moment prévu : {moment}",
+            "legalBasis": "Base réglementaire",
+            "startTitle": "Prêt à créer votre dossier ?",
+            "startText": "Un compte avec une adresse e-mail vérifiée est nécessaire. Votre brouillon restera privé.",
+            "start": "Commencer cette démarche"
+        },
+        "status": {
+            "draft": "Brouillon",
+            "under_review": "En revue",
+            "published": "Publiée",
+            "retired": "Retirée"
+        },
+        "statusHelp": {
+            "draft": "La définition peut encore être modifiée.",
+            "under_review": "Le contenu attend une validation indépendante.",
+            "published": "La version est immuable et peut recevoir de nouveaux dossiers.",
+            "retired": "Aucun nouveau dossier ne peut utiliser cette version."
+        },
+        "admin": {
+            "eyebrow": "Configuration versionnée",
+            "title": "Catalogue des démarches",
+            "intro": "Chaque service appartient à votre organisme. Son contenu est modifiable en brouillon, puis figé après une revue indépendante.",
+            "newService": "Créer un service",
+            "newServiceIntro": "La création ouvre automatiquement une première version brouillon.",
+            "newCategory": "Ajouter une catégorie",
+            "newCategoryIntro": "Les catégories sont communes au catalogue. Utilisez uniquement une couleur prévue par le design system.",
+            "categoryColor": "Couleur de service",
+            "sortOrder": "Ordre d’affichage",
+            "createCategory": "Ajouter la catégorie",
+            "categoryCreated": "La catégorie a été ajoutée au catalogue.",
+            "organization": "Organisme propriétaire",
+            "category": "Catégorie",
+            "code": "Code stable",
+            "codeHint": "Majuscules, chiffres, tirets et tirets bas uniquement.",
+            "nameFr": "Nom en français",
+            "nameEn": "Nom en anglais",
+            "descriptionFr": "Description en français",
+            "descriptionEn": "Description en anglais",
+            "create": "Créer et configurer",
+            "servicesTitle": "Services de votre périmètre",
+            "emptyTitle": "Aucun service dans ce périmètre",
+            "emptyDescription": "Créez le premier service puis complétez sa procédure.",
+            "openVersion": "Configurer la version",
+            "active": "Actif",
+            "created": "Le service et sa première version ont été créés.",
+            "saved": "Le brouillon a été enregistré.",
+            "submitted": "La version a été envoyée en revue.",
+            "returned": "La version est revenue en brouillon.",
+            "published": "La version a été publiée.",
+            "retired": "La version a été retirée.",
+            "versionCreated": "Une nouvelle version brouillon a été créée."
+        },
+        "editor": {
+            "back": "Retour au catalogue",
+            "registry": "Registre de configuration",
+            "title": "Version {number} · {service}",
+            "owner": "Organisme propriétaire",
+            "immutableNotice": "Le contenu de cette version est verrouillé. Créez une nouvelle version pour le faire évoluer.",
+            "reviewNote": "Motif du dernier retour : {note}",
+            "errorsTitle": "Corrigez les points suivants avant d’enregistrer :",
+            "identitySection": "Informations publiques",
+            "titleFr": "Titre en français",
+            "titleEn": "Titre en anglais",
+            "summaryFr": "Résumé en français",
+            "summaryEn": "Résumé en anglais",
+            "descriptionFr": "Description détaillée en français",
+            "descriptionEn": "Description détaillée en anglais",
+            "eligibilityFr": "Conditions en français",
+            "eligibilityEn": "Conditions en anglais",
+            "legalBasisFr": "Base réglementaire en français",
+            "legalBasisEn": "Base réglementaire en anglais",
+            "effectiveFrom": "Date d’effet",
+            "demoLabel": "Cette version contient uniquement des données DEMO non officielles",
+            "steps": "Étapes",
+            "stepsHelp": "L’ordre ci-dessous devient le parcours présenté à l’usager.",
+            "fields": "Champs du formulaire",
+            "documents": "Pièces demandées",
+            "rules": "Règles",
+            "fees": "Tarifs",
+            "item": "Élément {number}",
+            "step": "Étape {number}",
+            "stepCode": "Étape associée",
+            "nameFr": "Libellé en français",
+            "nameEn": "Libellé en anglais",
+            "descriptionFr": "Explication en français",
+            "descriptionEn": "Explication en anglais",
+            "type": "Type",
+            "isRequired": "Élément obligatoire",
+            "fieldCode": "Code du champ",
+            "helpFr": "Aide en français",
+            "helpEn": "Aide en anglais",
+            "optionsFr": "Choix proposés en français",
+            "optionsEn": "Choix proposés en anglais",
+            "optionsHint": "Un choix par ligne, dans le même ordre pour les deux langues.",
+            "documentCode": "Code de la pièce",
+            "ruleCode": "Code de la règle",
+            "feeCode": "Code du tarif",
+            "amountMinor": "Montant dans l’unité monétaire minimale",
+            "currency": "Devise ISO 4217",
+            "minorUnitExponent": "Nombre de décimales de la devise",
+            "dueWhenFr": "Moment du paiement en français",
+            "dueWhenEn": "Moment du paiement en anglais",
+            "legalBasisFeeFr": "Base réglementaire du tarif en français",
+            "legalBasisFeeEn": "Base réglementaire du tarif en anglais",
+            "mandatoryFee": "Paiement obligatoire",
+            "addStep": "Ajouter une étape",
+            "addField": "Ajouter un champ",
+            "addDocument": "Ajouter une pièce",
+            "addRule": "Ajouter une règle",
+            "addFee": "Ajouter un tarif",
+            "workflow": "Cycle de publication",
+            "submitReview": "Envoyer en revue",
+            "publish": "Publier la version",
+            "returnReason": "Corrections demandées",
+            "returnReasonHint": "Expliquez précisément ce qui doit être corrigé.",
+            "returnDraft": "Renvoyer en brouillon",
+            "retireReason": "Motif du retrait",
+            "retire": "Retirer la version",
+            "newVersion": "Créer une nouvelle version",
+            "versions": "Historique des versions",
+            "saveBeforeTransition": "Enregistrez le brouillon avant de l’envoyer en revue."
+        },
+        "stepTypes": {
+            "form": "Formulaire",
+            "review": "Contrôle",
+            "payment": "Paiement",
+            "appointment": "Rendez-vous",
+            "examination": "Examen",
+            "decision": "Décision",
+            "production": "Production",
+            "delivery": "Remise"
+        },
+        "fieldTypes": {
+            "text": "Texte court",
+            "textarea": "Texte long",
+            "select": "Liste",
+            "radio": "Choix unique",
+            "checkbox": "Case à cocher",
+            "date": "Date",
+            "number": "Nombre",
+            "email": "Adresse e-mail",
+            "tel": "Téléphone"
+        },
+        "ruleTypes": {
+            "eligibility": "Éligibilité",
+            "validation": "Validation",
+            "transition": "Passage d’étape"
+        }
+    },
+    "applications": {
+        "start": {
+            "eyebrow": "Avant de commencer",
+            "title": "Créer un brouillon",
+            "intro": "Vérifiez la version de procédure choisie. La création du brouillon ne dépose pas le dossier et n’engage aucun paiement.",
+            "version": "Version utilisée",
+            "private": "Ce brouillon est privé et lié à votre compte.",
+            "demoWarning": "Vous allez créer un dossier de démonstration sans valeur administrative.",
+            "confirm": "Créer mon brouillon"
+        },
+        "draft": {
+            "eyebrow": "Dossier en préparation",
+            "title": "Votre brouillon est créé",
+            "status": "Brouillon",
+            "statusHelp": "Aucune information n’a encore été transmise à une administration.",
+            "started": "Commencé le {date}",
+            "nextTitle": "Prochaine action",
+            "nextText": "Le formulaire de cette démarche sera ajouté dans la prochaine tranche. Votre choix de procédure est déjà conservé.",
+            "backCatalog": "Voir les autres démarches"
+        }
+    }
+}
