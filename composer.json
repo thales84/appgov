@@ -2,8 +2,8 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "appgov/platform",
     "type": "project",
-    "description": "Plateforme camerounaise de dematerialisation des demarches administratives.",
-    "keywords": ["laravel", "government", "cameroon", "public-services"],
+    "description": "Plateforme de dematerialisation des demarches administratives (Republique Francaise).",
+    "keywords": ["laravel", "government", "france", "public-services"],
     "license": "proprietary",
     "require": {
         "php": "^8.3",

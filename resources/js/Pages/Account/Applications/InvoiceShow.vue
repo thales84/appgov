@@ -52,7 +52,7 @@ const handlePayment = () => {
       <div class="bg-white border border-slate-200 rounded-lg p-6 shadow-sm space-y-6">
         <div class="border-b pb-4 flex items-start justify-between">
           <div>
-            <h2 class="font-display text-xl font-bold text-brand-blue-900">RÉPUBLIQUE DU CAMEROUN</h2>
+            <h2 class="font-display text-xl font-bold text-brand-blue-900">RÉPUBLIQUE FRANÇAISE</h2>
             <p class="text-xs text-slate-500">Trésor Public — Démarche administrative</p>
             <p class="text-sm font-semibold text-slate-800 mt-2">{{ application.procedureTitle.fr }}</p>
           </div>
@@ -135,8 +135,8 @@ const handlePayment = () => {
             >
               <input v-model="selectedProvider" type="radio" value="mtn_momo" class="text-brand-blue-600 focus:ring-brand-blue-600">
               <div>
-                <p class="text-xs font-bold text-slate-900">MTN Mobile Money</p>
-                <p class="text-[11px] text-slate-500">MoMo Cameroun</p>
+                <p class="text-xs font-bold text-slate-900">Carte Bancaire / PayLib</p>
+                <p class="text-[11px] text-slate-500">Paiement sécurisé en ligne</p>
               </div>
             </label>
           </div>

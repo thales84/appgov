@@ -80,8 +80,8 @@
         <table style="width: 100%;">
             <tr>
                 <td>
-                    <div class="title">RÉPUBLIQUE DU CAMEROUN</div>
-                    <div class="subtitle">Paix - Travail - Patrie</div>
+                    <div class="title">RÉPUBLIQUE FRANÇAISE</div>
+                    <div class="subtitle">Liberté - Égalité - Fraternité</div>
                 </td>
                 <td style="text-align: right;">
                     <div style="font-weight: bold; color: #0B3B75;">AppGov - Trésor Public</div>
@@ -101,13 +101,14 @@
                 <td style="text-align: right;">
                     <div class="ref-label">Date du paiement</div>
                     <div style="font-size: 14px; font-weight: bold;">
-                        {{ $payment->reconciled_at ? $payment->reconciled_at->timezone('Africa/Douala')->format('d/m/Y H:i (WAT)') : '-' }}
+                        {{ $payment->reconciled_at ? $payment->reconciled_at->timezone('Europe/Paris')->format('d/m/Y H:i (CET)') : '-' }}
                     </div>
                 </td>
             </tr>
         </table>
     </div>
 
+    <div class="section-title" style="margin-bottom: 10px; font-weight: bold; color: #0B3B75;">Détail des règlements</div>
     <table class="details-table">
         <thead>
             <tr>
@@ -119,18 +120,18 @@
             @foreach($payment->invoice->lines as $line)
                 <tr>
                     <td>{{ $line->label_fr }}</td>
-                    <td style="text-align: right; font-family: monospace;">{{ number_format($line->amount_minor, 0, ',', ' ') }}</td>
+                    <td style="text-align: right; font-family: monospace;">{{ number_format($line->amount_minor / 100, 2, ',', ' ') }} €</td>
                 </tr>
             @endforeach
             <tr class="total-row">
-                <td>Montant Total Reglé</td>
-                <td style="text-align: right; font-family: monospace;">{{ number_format($payment->amount_minor, 0, ',', ' ') }} {{ $payment->currency }}</td>
+                <td>Montant Total Réglé</td>
+                <td style="text-align: right; font-family: monospace;">{{ number_format($payment->amount_minor / 100, 2, ',', ' ') }} {{ $payment->currency }}</td>
             </tr>
         </tbody>
     </table>
 
     <div class="footer">
-        Quittance de règlement délivrée numériquement sur la plateforme AppGov Cameroun.
+        Quittance de règlement délivrée numériquement sur la plateforme AppGov France.
         Référence facture : {{ $payment->invoice->invoice_number }} | Dossier n° : {{ $payment->invoice->application->reference ?? '-' }}
     </div>
 </body>

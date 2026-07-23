@@ -10,7 +10,7 @@ return [
     | dates intended for citizens and public servants.
     |
     */
-    'display_timezone' => env('APP_DISPLAY_TIMEZONE', 'Africa/Douala'),
+    'display_timezone' => env('APP_DISPLAY_TIMEZONE', 'Europe/Paris'),
 
     /*
     |--------------------------------------------------------------------------

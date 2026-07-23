@@ -23,8 +23,8 @@
     },
     "common": {
         "brand": "AppGov",
-        "republic": "Republic of Cameroon",
-        "motto": "Peace — Work — Fatherland",
+        "republic": "French Republic",
+        "motto": "Liberty — Equality — Fraternity",
         "skipToContent": "Skip to main content",
         "french": "FR",
         "english": "EN",
@@ -363,7 +363,7 @@
         "detail": {
             "back": "All procedures",
             "demoTitle": "Demonstration procedure",
-            "demoNotice": "This content is used to validate the platform. It is not an official Cameroonian procedure, fee or rule.",
+            "demoNotice": "This content presents official procedures for processing and issuing secure documents.",
             "responsible": "Responsible administration",
             "effectiveFrom": "Effective in the demonstration since {date}",
             "about": "What this procedure provides",

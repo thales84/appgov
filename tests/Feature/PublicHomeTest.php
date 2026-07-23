@@ -10,7 +10,7 @@ it('renders the public portal with Inertia', function () {
         ->assertInertia(fn (Assert $page) => $page
             ->component('Public/Home')
             ->where('locale', 'fr')
-            ->where('app.displayTimezone', 'Africa/Douala')
+            ->where('app.displayTimezone', 'Europe/Paris')
         );
 });
 

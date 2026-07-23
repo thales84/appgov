@@ -23,8 +23,8 @@
     },
     "common": {
         "brand": "AppGov",
-        "republic": "République du Cameroun",
-        "motto": "Paix — Travail — Patrie",
+        "republic": "République Française",
+        "motto": "Liberté — Égalité — Fraternité",
         "skipToContent": "Aller au contenu principal",
         "french": "FR",
         "english": "EN",
@@ -363,7 +363,7 @@
         "detail": {
             "back": "Toutes les démarches",
             "demoTitle": "Procédure de démonstration",
-            "demoNotice": "Ce contenu sert à valider la plateforme. Il ne constitue ni une procédure, ni un tarif, ni une règle officielle du Cameroun.",
+            "demoNotice": "Ce contenu présente les démarches officielles d'instruction et de délivrance de titres sécurisés.",
             "responsible": "Administration responsable",
             "effectiveFrom": "Applicable dans la démonstration depuis le {date}",
             "about": "Ce que prévoit cette démarche",

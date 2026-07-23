@@ -32,8 +32,8 @@ const categoryBorders = {
     business: 'border-service-business',
 };
 const dateFormatter = computed(() => new Intl.DateTimeFormat(
-    locale.value === 'fr' ? 'fr-CM' : 'en-CM',
-    { dateStyle: 'long', timeZone: 'Africa/Douala' },
+    locale.value === 'fr' ? 'fr-FR' : 'en-FR',
+    { dateStyle: 'long', timeZone: 'Europe/Paris' },
 ));
 </script>
 

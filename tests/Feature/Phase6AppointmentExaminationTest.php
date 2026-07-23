@@ -49,9 +49,9 @@ it('allows a citizen to book an appointment slot and prevents overbooking when s
 
     $location = Location::create([
         'organization_id' => $service->organization_id,
-        'code' => 'LOC-YAOUNDE-01',
-        'name_fr' => 'Centre d\'Examen Yaoundé',
-        'name_en' => 'Yaounde Exam Center',
+        'code' => 'LOC-PARIS-01',
+        'name_fr' => 'Centre d\'Examen de Paris',
+        'name_en' => 'Paris Exam Center',
         'daily_capacity' => 10,
         'is_active' => true,
     ]);
@@ -76,7 +76,7 @@ it('allows a citizen to book an appointment slot and prevents overbooking when s
         'citizen_id' => User::factory()->create()->id,
         'procedure_version_id' => $application->procedure_version_id,
         'status' => 'submitted',
-        'reference' => 'CM-PDC-2026-TEST99-Z',
+        'reference' => 'FR-PDC-2026-TEST99-Z',
         'started_at' => now(),
     ]);
 
@@ -93,9 +93,9 @@ it('allows an examiner to record exam attempt results', function () {
 
     $location = Location::create([
         'organization_id' => $service->organization_id,
-        'code' => 'LOC-DOUALA-01',
-        'name_fr' => 'Centre Douala',
-        'name_en' => 'Douala Center',
+        'code' => 'LOC-LYON-01',
+        'name_fr' => 'Centre d\'Examen de Lyon',
+        'name_en' => 'Lyon Exam Center',
         'is_active' => true,
     ]);
 
@@ -137,9 +137,9 @@ it('executes an audited correction of an exam result saving previous result', fu
 
     $location = Location::create([
         'organization_id' => $service->organization_id,
-        'code' => 'LOC-BAFOUSSAM-01',
-        'name_fr' => 'Centre Bafoussam',
-        'name_en' => 'Bafoussam Center',
+        'code' => 'LOC-MARSEILLE-01',
+        'name_fr' => 'Centre d\'Examen de Marseille',
+        'name_en' => 'Marseille Exam Center',
         'is_active' => true,
     ]);
 

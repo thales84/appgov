@@ -48,7 +48,7 @@ décision si elle change le produit, la sécurité ou une règle légale.
 - Les références publiques utilisent un identifiant opaque; aucun identifiant
   séquentiel interne n'est exposé.
 - Les dates sont stockées en UTC et affichées dans le fuseau
-  `Africa/Douala`.
+  `Europe/Paris`.
 - Les montants sont des entiers avec un code devise ISO 4217. Aucun calcul
   financier en nombre flottant.
 - Les documents sont privés. La base ne conserve que leurs métadonnées et leur
@@ -68,7 +68,7 @@ décision si elle change le produit, la sécurité ou une règle légale.
 - Un dossier, un paiement, une décision ou une entrée d'audit ne sont jamais
   supprimés physiquement par une fonction normale.
 - Les données de démonstration portent clairement la mention `DEMO` et ne sont
-  jamais présentées comme des règles camerounaises officielles.
+  jamais présentées comme des règles françaises officielles.
 - Les motifs détaillés, résultats et données personnelles ne sont visibles
   qu'après authentification et autorisation.
 

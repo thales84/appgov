@@ -26,7 +26,7 @@ const initialLocale = supportedLocales.includes(savedLocale) ? savedLocale : 'fr
 document.documentElement.lang = initialLocale;
 
 createInertiaApp({
-    title: (title) => (title ? `${title} — AppGov Cameroun` : 'AppGov Cameroun'),
+    title: (title) => (title ? `${title} — AppGov France` : 'AppGov France'),
     resolve: (name) => resolvePageComponent(
         `./Pages/${name}.vue`,
         import.meta.glob('./Pages/**/*.vue'),

@@ -90,11 +90,11 @@
         <table>
             <tr>
                 <td>
-                    <div class="title">RÉPUBLIQUE DU CAMEROUN</div>
-                    <div class="subtitle">Paix - Travail - Patrie</div>
+                    <div class="title">RÉPUBLIQUE FRANÇAISE</div>
+                    <div class="subtitle">Liberté - Égalité - Fraternité</div>
                 </td>
                 <td style="text-align: right;">
-                    <div style="font-weight: bold; color: #0B3B75;">AppGov Cameroun</div>
+                    <div style="font-weight: bold; color: #0B3B75;">AppGov France</div>
                     <div class="subtitle">Portail des Démarches Administratives</div>
                 </td>
             </tr>
@@ -111,7 +111,7 @@
                 <td style="text-align: right;">
                     <div class="ref-label">Date du dépôt</div>
                     <div style="font-size: 14px; font-weight: bold; color: #172033;">
-                        {{ $application->submitted_at ? $application->submitted_at->timezone('Africa/Douala')->format('d/m/Y H:i (WAT)') : '-' }}
+                        {{ $application->submitted_at ? $application->submitted_at->timezone('Europe/Paris')->format('d/m/Y H:i (CET)') : '-' }}
                     </div>
                 </td>
             </tr>
@@ -164,7 +164,7 @@
 
     <div class="footer">
         Cet accusé de réception est un document informatique généré automatiquement par la plateforme AppGov.
-        Conservez votre référence de suivi (<strong>{{ $application->reference }}</strong>) pour consulter l'avancement de votre dossier sur appgov.cm.
+        Conservez votre référence de suivi (<strong>{{ $application->reference }}</strong>) pour consulter l'avancement de votre dossier sur appgov.fr.
     </div>
 </body>
 </html>
