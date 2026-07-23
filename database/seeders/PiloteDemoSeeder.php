@@ -25,7 +25,7 @@ class PiloteDemoSeeder extends Seeder
                 'name' => 'Jean-Paul DEMO (Usager Pilote)',
                 'account_type' => AccountType::Citizen,
                 'status' => AccountStatus::Active,
-                'password' => bcrypt('Password123!'),
+                'password' => 'Password123!',
                 'email_verified_at' => now(),
             ]
         );
@@ -50,7 +50,7 @@ class PiloteDemoSeeder extends Seeder
                     'name' => 'Instructeur DEMO',
                     'account_type' => AccountType::Agent,
                     'status' => AccountStatus::Active,
-                    'password' => bcrypt('Password123!'),
+                    'password' => 'Password123!',
                     'email_verified_at' => now(),
                     'two_factor_secret' => 'configured',
                     'two_factor_recovery_codes' => 'configured',
