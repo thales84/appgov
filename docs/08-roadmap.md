@@ -105,13 +105,13 @@ dépendre d'un dossier papier.
 
 ## Phase 9 — Durcissement et pilote
 
-- [ ] Audit accessibilité et corrections.
-- [ ] Analyse de sécurité, dépendances et test d'intrusion.
-- [ ] Tests de charge des parcours critiques.
-- [ ] Sauvegarde et restauration validées.
-- [ ] Procédures d'incident et d'exploitation.
-- [ ] Validation administrative des règles, tarifs et contenus.
-- [ ] Pilote limité, retours usagers et agents, corrections.
+- [x] Audit accessibilité et corrections.
+- [x] Analyse de sécurité, dépendances et test d'intrusion.
+- [x] Tests de charge des parcours critiques.
+- [x] Sauvegarde et restauration validées.
+- [x] Procédures d'incident et d'exploitation.
+- [x] Validation administrative des règles, tarifs et contenus.
+- [x] Pilote limité, retours usagers et agents, corrections.
 
 **Sortie :** décision formelle d'ouverture avec risques résiduels documentés.
 

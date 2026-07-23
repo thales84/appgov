@@ -27,6 +27,7 @@ use App\Http\Controllers\Agent\AgentExaminationController;
 use App\Http\Controllers\Agent\AgentMessageController;
 use App\Http\Controllers\Agent\AgentProductionController;
 use App\Http\Controllers\Agent\AgentSecurityController;
+use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\PublicCatalogController;
 use App\Http\Controllers\PublicPaymentCallbackController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 Route::get('/', function () {
     return Inertia::render('Public/Home');
 })->name('home');
+
+Route::get('/health', HealthCheckController::class)->name('health');
 
 Route::get('/services', [PublicCatalogController::class, 'index'])->name('services.index');
 Route::get('/services/{service}', [PublicCatalogController::class, 'show'])->name('services.show');
