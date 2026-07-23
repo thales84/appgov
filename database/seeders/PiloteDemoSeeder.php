@@ -57,9 +57,9 @@ class PiloteDemoSeeder extends Seeder
                     'status' => AccountStatus::Active,
                     'password' => 'Password123!',
                     'email_verified_at' => now(),
-                    'two_factor_secret' => 'configured',
-                    'two_factor_recovery_codes' => 'configured',
-                    'two_factor_confirmed_at' => now(),
+                    'two_factor_secret' => null,
+                    'two_factor_recovery_codes' => null,
+                    'two_factor_confirmed_at' => null,
                 ]
             );
 
