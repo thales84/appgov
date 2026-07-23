@@ -94,11 +94,11 @@ parcours.
 
 ## Phase 8 — Archivage, rapports et exploitation
 
-- [ ] Paquet d'archive avec fichiers, métadonnées, empreintes et historique.
-- [ ] Politiques de conservation configurables.
-- [ ] Tableaux de bord opérationnels et délais.
-- [ ] Exports autorisés et journalisés.
-- [ ] Supervision Pulse/Sentry et alertes de queues.
+- [x] Paquet d'archive avec fichiers, métadonnées, empreintes et historique.
+- [x] Politiques de conservation configurables.
+- [x] Tableaux de bord opérationnels et délais.
+- [x] Exports autorisés et journalisés.
+- [x] Supervision Pulse/Sentry et alertes de queues.
 
 **Sortie :** un dossier clôturé est archivable, vérifiable et exploitable sans
 dépendre d'un dossier papier.
