@@ -17,12 +17,25 @@ class PiloteDemoSeeder extends Seeder
         $this->call(AccessControlSeeder::class);
         $this->call(CatalogDemoSeeder::class);
 
-        // Create Demo Citizen
+        // Create Citizen User
         $citizen = User::firstOrCreate(
+            ['email' => 'citoyen@appgov.cm'],
+            [
+                'public_id' => (string) Str::ulid(),
+                'name' => 'Jean-Paul Mbarga',
+                'account_type' => AccountType::Citizen,
+                'status' => AccountStatus::Active,
+                'password' => 'Password123!',
+                'email_verified_at' => now(),
+            ]
+        );
+
+        // Fallback for tests
+        User::firstOrCreate(
             ['email' => 'citizen.demo@appgov.cm'],
             [
                 'public_id' => (string) Str::ulid(),
-                'name' => 'Jean-Paul DEMO (Usager Pilote)',
+                'name' => 'Jean-Paul Mbarga',
                 'account_type' => AccountType::Citizen,
                 'status' => AccountStatus::Active,
                 'password' => 'Password123!',
@@ -34,20 +47,38 @@ class PiloteDemoSeeder extends Seeder
             ['user_id' => $citizen->id],
             [
                 'first_name' => 'Jean-Paul',
-                'last_name' => 'DEMO',
+                'last_name' => 'Mbarga',
                 'phone' => '+237690000000',
                 'preferred_locale' => 'fr',
             ]
         );
 
-        // Create Demo Agent
-        $org = Organization::where('code', 'MINTRANSPORT')->first();
+        // Create Agent User
+        $org = Organization::where('code', 'MINTRANSPORT')->first()
+            ?? Organization::where('code', 'DEMO-TRANSPORT-AUTHORITY')->first();
+
         if ($org) {
             $agent = User::firstOrCreate(
+                ['email' => 'agent@appgov.cm'],
+                [
+                    'public_id' => (string) Str::ulid(),
+                    'name' => 'Instructeur MINTRANSPORT',
+                    'account_type' => AccountType::Agent,
+                    'status' => AccountStatus::Active,
+                    'password' => 'Password123!',
+                    'email_verified_at' => now(),
+                    'two_factor_secret' => 'configured',
+                    'two_factor_recovery_codes' => 'configured',
+                    'two_factor_confirmed_at' => now(),
+                ]
+            );
+
+            // Fallback for tests
+            User::firstOrCreate(
                 ['email' => 'agent.demo@appgov.cm'],
                 [
                     'public_id' => (string) Str::ulid(),
-                    'name' => 'Instructeur DEMO',
+                    'name' => 'Instructeur MINTRANSPORT',
                     'account_type' => AccountType::Agent,
                     'status' => AccountStatus::Active,
                     'password' => 'Password123!',

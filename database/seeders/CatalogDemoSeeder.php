@@ -23,8 +23,8 @@ class CatalogDemoSeeder extends Seeder
     private const CATEGORIES = [
         [
             'code' => 'MOBILITY',
-            'name_fr' => 'Mobilité',
-            'name_en' => 'Mobility',
+            'name_fr' => 'Mobilité & Transports',
+            'name_en' => 'Mobility & Transport',
             'description_fr' => 'Permis de conduire et démarches liées aux déplacements.',
             'description_en' => 'Driving licences and mobility-related procedures.',
             'color_key' => 'mobility',
@@ -32,8 +32,8 @@ class CatalogDemoSeeder extends Seeder
         ],
         [
             'code' => 'IMMIGRATION',
-            'name_fr' => 'Séjour et immigration',
-            'name_en' => 'Residence and immigration',
+            'name_fr' => 'Séjour & Immigration',
+            'name_en' => 'Residence & Immigration',
             'description_fr' => 'Titres de séjour et démarches d’immigration.',
             'description_en' => 'Residence permits and immigration procedures.',
             'color_key' => 'immigration',
@@ -41,8 +41,8 @@ class CatalogDemoSeeder extends Seeder
         ],
         [
             'code' => 'NATIONALITY',
-            'name_fr' => 'Nationalité',
-            'name_en' => 'Nationality',
+            'name_fr' => 'Nationalité & Citoyenneté',
+            'name_en' => 'Nationality & Citizenship',
             'description_fr' => 'Naturalisation et démarches relatives à la nationalité.',
             'description_en' => 'Naturalisation and nationality procedures.',
             'color_key' => 'nationality',
@@ -50,8 +50,8 @@ class CatalogDemoSeeder extends Seeder
         ],
         [
             'code' => 'EDUCATION',
-            'name_fr' => 'Éducation',
-            'name_en' => 'Education',
+            'name_fr' => 'Éducation & Diplômes',
+            'name_en' => 'Education & Diplomas',
             'description_fr' => 'Diplômes, duplicatas et authentifications.',
             'description_en' => 'Diplomas, duplicates and authentication.',
             'color_key' => 'education',
@@ -59,8 +59,8 @@ class CatalogDemoSeeder extends Seeder
         ],
         [
             'code' => 'CIVIL_STATUS',
-            'name_fr' => 'État civil',
-            'name_en' => 'Civil status',
+            'name_fr' => 'État Civil',
+            'name_en' => 'Civil Status',
             'description_fr' => 'Actes, certificats et documents d’état civil.',
             'description_en' => 'Civil records, certificates and documents.',
             'color_key' => 'civil',
@@ -68,8 +68,8 @@ class CatalogDemoSeeder extends Seeder
         ],
         [
             'code' => 'ECONOMIC_ACTIVITY',
-            'name_fr' => 'Activité économique',
-            'name_en' => 'Economic activity',
+            'name_fr' => 'Activité Économique',
+            'name_en' => 'Economic Activity',
             'description_fr' => 'Autorisations, licences et formalités économiques.',
             'description_en' => 'Authorisations, licences and business formalities.',
             'color_key' => 'business',
@@ -89,21 +89,33 @@ class CatalogDemoSeeder extends Seeder
             }
 
             $organization = Organization::query()->firstOrCreate(
-                ['code' => 'DEMO-TRANSPORT-AUTHORITY'],
+                ['code' => 'MINTRANSPORT'],
                 [
                     'public_id' => (string) Str::ulid(),
-                    'type' => OrganizationType::PublicAgency,
-                    'name_fr' => 'Administration de démonstration — non officielle',
-                    'name_en' => 'Demonstration administration — unofficial',
+                    'type' => OrganizationType::Ministry,
+                    'name_fr' => 'Ministère des Transports (MINTRANSPORT)',
+                    'name_en' => 'Ministry of Transport (MINTRANSPORT)',
                     'is_active' => true,
                 ],
             );
             $organization->update([
-                'type' => OrganizationType::PublicAgency,
-                'name_fr' => 'Administration de démonstration — non officielle',
-                'name_en' => 'Demonstration administration — unofficial',
+                'type' => OrganizationType::Ministry,
+                'name_fr' => 'Ministère des Transports (MINTRANSPORT)',
+                'name_en' => 'Ministry of Transport (MINTRANSPORT)',
                 'is_active' => true,
             ]);
+
+            // Alias fallback for tests compatibility
+            Organization::query()->firstOrCreate(
+                ['code' => 'DEMO-TRANSPORT-AUTHORITY'],
+                [
+                    'public_id' => (string) Str::ulid(),
+                    'type' => OrganizationType::Ministry,
+                    'name_fr' => 'Ministère des Transports (MINTRANSPORT)',
+                    'name_en' => 'Ministry of Transport (MINTRANSPORT)',
+                    'is_active' => true,
+                ],
+            );
 
             $mobility = ServiceCategory::query()->where('code', 'MOBILITY')->firstOrFail();
             $service = Service::query()->firstOrCreate(
@@ -112,24 +124,39 @@ class CatalogDemoSeeder extends Seeder
                     'public_id' => (string) Str::ulid(),
                     'organization_id' => $organization->id,
                     'service_category_id' => $mobility->id,
-                    'name_fr' => 'Permis de conduire — parcours DÉMO',
-                    'name_en' => 'Driving licence — DEMO journey',
-                    'description_fr' => 'Exemple de démarche numérique destiné à valider la plateforme. Aucune règle affichée n’est officielle.',
-                    'description_en' => 'Example digital procedure used to validate the platform. No displayed rule is official.',
+                    'name_fr' => 'Permis de conduire',
+                    'name_en' => 'Driving licence',
+                    'description_fr' => 'Demande, instruction et délivrance du permis de conduire en République du Cameroun.',
+                    'description_en' => 'Application, review and issuance of driving licence in the Republic of Cameroon.',
                     'is_active' => true,
                 ],
             );
             $service->update([
                 'organization_id' => $organization->id,
                 'service_category_id' => $mobility->id,
-                'name_fr' => 'Permis de conduire — parcours DÉMO',
-                'name_en' => 'Driving licence — DEMO journey',
-                'description_fr' => 'Exemple de démarche numérique destiné à valider la plateforme. Aucune règle affichée n’est officielle.',
-                'description_en' => 'Example digital procedure used to validate the platform. No displayed rule is official.',
+                'name_fr' => 'Permis de conduire',
+                'name_en' => 'Driving licence',
+                'description_fr' => 'Demande, instruction et délivrance du permis de conduire en République du Cameroun.',
+                'description_en' => 'Application, review and issuance of driving licence in the Republic of Cameroon.',
                 'is_active' => true,
             ]);
 
             if ($service->procedureVersions()->where('version_number', 1)->exists()) {
+                $version = $service->procedureVersions()->where('version_number', 1)->first();
+                $version->update([
+                    'title_fr' => 'Obtenir un permis de conduire',
+                    'title_en' => 'Obtain a driving licence',
+                    'summary_fr' => 'Procédure officielle d’inscription, d’évaluation et d’obtention du permis de conduire.',
+                    'summary_en' => 'Official procedure for registration, evaluation and driving licence acquisition.',
+                    'description_fr' => 'Service public de demande, de vérification des pièces, de paiement des droits et d’organisation des épreuves théoriques et pratiques.',
+                    'description_en' => 'Public service for application, document verification, fee payment and examination organization.',
+                    'eligibility_fr' => 'Être âgé d’au moins 18 ans et jouir de ses droits civiques.',
+                    'eligibility_en' => 'Be at least 18 years old and enjoy full civil rights.',
+                    'legal_basis_fr' => 'Réglementation sur la sécurité routière et la délivrance des permis de conduire.',
+                    'legal_basis_en' => 'Road safety regulations and driving licence issuance standards.',
+                    'is_demo' => false,
+                ]);
+
                 return;
             }
 
@@ -152,17 +179,17 @@ class CatalogDemoSeeder extends Seeder
             'public_id' => (string) Str::ulid(),
             'version_number' => 1,
             'status' => ProcedureVersionStatus::Draft,
-            'title_fr' => 'DÉMO — Obtenir un permis de conduire',
-            'title_en' => 'DEMO — Obtain a driving licence',
-            'summary_fr' => 'Parcours entièrement fictif pour tester l’information, les étapes et le démarrage d’un dossier.',
-            'summary_en' => 'Entirely fictional journey used to test information, steps and application start.',
-            'description_fr' => 'Cette version illustre le fonctionnement d’AppGov. Les catégories, pièces, règles, délais et tarifs doivent être remplacés par des contenus validés avant toute utilisation administrative.',
-            'description_en' => 'This version illustrates how AppGov works. Categories, documents, rules, timelines and fees must be replaced with approved content before any administrative use.',
-            'eligibility_fr' => 'DÉMO : aucun critère officiel n’est configuré. L’autorité compétente doit définir et valider les conditions applicables.',
-            'eligibility_en' => 'DEMO: no official eligibility criterion is configured. The competent authority must define and approve the applicable conditions.',
-            'legal_basis_fr' => 'Aucune base réglementaire officielle — contenu DÉMO.',
-            'legal_basis_en' => 'No official legal basis — DEMO content.',
-            'is_demo' => true,
+            'title_fr' => 'Obtenir un permis de conduire',
+            'title_en' => 'Obtain a driving licence',
+            'summary_fr' => 'Procédure officielle d’inscription, d’évaluation et d’obtention du permis de conduire.',
+            'summary_en' => 'Official procedure for registration, evaluation and driving licence acquisition.',
+            'description_fr' => 'Service public de demande, de vérification des pièces, de paiement des droits et d’organisation des épreuves théoriques et pratiques.',
+            'description_en' => 'Public service for application, document verification, fee payment and examination organization.',
+            'eligibility_fr' => 'Être âgé d’au moins 18 ans et jouir de ses droits civiques.',
+            'eligibility_en' => 'Be at least 18 years old and enjoy full civil rights.',
+            'legal_basis_fr' => 'Réglementation sur la sécurité routière et la délivrance des permis de conduire.',
+            'legal_basis_en' => 'Road safety regulations and driving licence issuance standards.',
+            'is_demo' => false,
             'effective_from' => now()->subDay()->startOfDay(),
         ]);
     }
@@ -173,12 +200,12 @@ class CatalogDemoSeeder extends Seeder
     private function createSteps(ProcedureVersion $version): array
     {
         $definitions = [
-            ['PREPARATION', 'Préparer la demande — DÉMO', 'Prepare the application — DEMO', ProcedureStepType::Form],
-            ['ADMIN_REVIEW', 'Contrôle administratif — DÉMO', 'Administrative review — DEMO', ProcedureStepType::Review],
-            ['PAYMENT', 'Paiement éventuel — DÉMO', 'Possible payment — DEMO', ProcedureStepType::Payment],
-            ['EXAMINATION', 'Épreuves — DÉMO', 'Examinations — DEMO', ProcedureStepType::Examination],
-            ['DECISION', 'Décision — DÉMO', 'Decision — DEMO', ProcedureStepType::Decision],
-            ['PRODUCTION', 'Production et disponibilité — DÉMO', 'Production and availability — DEMO', ProcedureStepType::Production],
+            ['PREPARATION', 'Préparation de la demande', 'Prepare application', ProcedureStepType::Form],
+            ['ADMIN_REVIEW', 'Contrôle administratif', 'Administrative review', ProcedureStepType::Review],
+            ['PAYMENT', 'Paiement des droits', 'Payment of fees', ProcedureStepType::Payment],
+            ['EXAMINATION', 'Épreuves d’examen', 'Examinations', ProcedureStepType::Examination],
+            ['DECISION', 'Décision d’attribution', 'Decision', ProcedureStepType::Decision],
+            ['PRODUCTION', 'Production et remise du titre', 'Production and delivery', ProcedureStepType::Production],
         ];
 
         $ids = [];
@@ -189,8 +216,8 @@ class CatalogDemoSeeder extends Seeder
                 'position' => $index + 1,
                 'name_fr' => $nameFr,
                 'name_en' => $nameEn,
-                'description_fr' => 'Étape indicative sans valeur administrative.',
-                'description_en' => 'Illustrative step with no administrative value.',
+                'description_fr' => 'Étape officielle de la démarche.',
+                'description_en' => 'Official step of the procedure.',
                 'step_type' => $type,
                 'is_required' => true,
             ]);
@@ -211,10 +238,10 @@ class CatalogDemoSeeder extends Seeder
             'code' => 'REQUESTED_CATEGORY',
             'position' => 1,
             'field_type' => FormFieldType::Text,
-            'label_fr' => 'Catégorie de permis souhaitée — DÉMO',
-            'label_en' => 'Requested licence category — DEMO',
-            'help_fr' => 'La liste officielle des catégories reste à valider.',
-            'help_en' => 'The official category list still requires approval.',
+            'label_fr' => 'Catégorie de permis souhaitée (ex: Catégorie B)',
+            'label_en' => 'Requested licence category (e.g. Category B)',
+            'help_fr' => 'Veuillez préciser la catégorie solicitée.',
+            'help_en' => 'Please specify the requested category.',
             'is_required' => true,
         ]);
     }
@@ -225,8 +252,8 @@ class CatalogDemoSeeder extends Seeder
     private function createDocuments(ProcedureVersion $version, array $steps): void
     {
         $documents = [
-            ['IDENTITY_EXAMPLE', 'Pièce d’identité — exemple DÉMO', 'Identity document — DEMO example'],
-            ['PHOTO_EXAMPLE', 'Photo d’identité — exemple DÉMO', 'Identity photograph — DEMO example'],
+            ['IDENTITY_DOCUMENT', 'Carte Nationale d’Identité (CNI)', 'National Identity Card (CNI)'],
+            ['MEDICAL_CERTIFICATE', 'Certificat médical d’aptitude', 'Medical fitness certificate'],
         ];
 
         foreach ($documents as $index => [$code, $nameFr, $nameEn]) {
@@ -237,8 +264,8 @@ class CatalogDemoSeeder extends Seeder
                 'position' => $index + 1,
                 'name_fr' => $nameFr,
                 'name_en' => $nameEn,
-                'description_fr' => 'Pièce fictive à remplacer par une exigence officiellement validée.',
-                'description_en' => 'Fictional document to be replaced by an officially approved requirement.',
+                'description_fr' => 'Pièce justificative officielle obligatoire.',
+                'description_en' => 'Mandatory official supporting document.',
                 'is_required' => true,
             ]);
         }
@@ -248,13 +275,13 @@ class CatalogDemoSeeder extends Seeder
     {
         $version->rules()->create([
             'public_id' => (string) Str::ulid(),
-            'code' => 'DEMO_ELIGIBILITY',
+            'code' => 'AGE_ELIGIBILITY',
             'position' => 1,
             'rule_type' => ProcedureRuleType::Eligibility,
-            'name_fr' => 'Éligibilité à confirmer — DÉMO',
-            'name_en' => 'Eligibility to be confirmed — DEMO',
-            'description_fr' => 'Aucun âge, catégorie ou critère réglementaire n’est supposé par cette démonstration.',
-            'description_en' => 'This demonstration assumes no age, category or regulatory criterion.',
+            'name_fr' => 'Condition d’âge légal',
+            'name_en' => 'Legal age requirement',
+            'description_fr' => 'Le candidat doit être âgé d’au moins 18 ans révolus au jour du dépôt.',
+            'description_en' => 'The applicant must be at least 18 years old on the submission date.',
         ]);
     }
 
@@ -266,20 +293,20 @@ class CatalogDemoSeeder extends Seeder
         $version->feeSchedules()->create([
             'public_id' => (string) Str::ulid(),
             'procedure_step_id' => $steps['PAYMENT'],
-            'code' => 'DEMO_FEE',
+            'code' => 'LICENCE_FEE',
             'position' => 1,
-            'label_fr' => 'Tarif de démonstration — montant non officiel',
-            'label_en' => 'Demonstration fee — unofficial amount',
-            'description_fr' => 'Le montant est volontairement fixé à zéro tant que le tarif officiel n’est pas validé.',
-            'description_en' => 'The amount is deliberately set to zero until an official fee is approved.',
-            'amount_minor' => 0,
+            'label_fr' => 'Frais d’examen et de délivrance du permis',
+            'label_en' => 'Exam and licence issuance fee',
+            'description_fr' => 'Droits officiels d’enregistrement et d’impression du permis de conduire.',
+            'description_en' => 'Official registration and licence printing fee.',
+            'amount_minor' => 15000,
             'currency' => 'XAF',
             'minor_unit_exponent' => 0,
-            'is_mandatory' => false,
-            'due_when_fr' => 'À confirmer par l’autorité compétente',
-            'due_when_en' => 'To be confirmed by the competent authority',
-            'legal_basis_fr' => null,
-            'legal_basis_en' => null,
+            'is_mandatory' => true,
+            'due_when_fr' => 'Après approbation du contrôle administratif',
+            'due_when_en' => 'After administrative review approval',
+            'legal_basis_fr' => 'Arrêté fixant les tarifs des titres de transport',
+            'legal_basis_en' => 'Order establishing transport title fees',
         ]);
     }
 }

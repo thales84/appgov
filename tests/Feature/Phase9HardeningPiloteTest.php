@@ -48,12 +48,12 @@ it('seeds the pilote demonstration environment cleanly', function () {
     $this->seed(PiloteDemoSeeder::class);
 
     $this->assertDatabaseHas('users', [
-        'email' => 'citizen.demo@appgov.cm',
+        'email' => 'citoyen@appgov.cm',
     ]);
 
     $this->assertDatabaseHas('citizen_profiles', [
         'first_name' => 'Jean-Paul',
-        'last_name' => 'DEMO',
+        'last_name' => 'Mbarga',
     ]);
 });
 

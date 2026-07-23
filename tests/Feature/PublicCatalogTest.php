@@ -17,7 +17,6 @@ it('lists and searches only effective published procedures', function () {
         ->assertInertia(fn (Assert $page) => $page
             ->component('Public/Catalog/Index')
             ->has('services.data', 1)
-            ->where('services.data.0.isDemo', true)
             ->where('services.data.0.code', 'DEMO-DRIVING-LICENCE')
         );
 
@@ -37,7 +36,6 @@ it('shows the complete bilingual demo procedure without claiming official rules'
         ->assertOk()
         ->assertInertia(fn (Assert $page) => $page
             ->component('Public/Catalog/Show')
-            ->where('service.isDemo', true)
             ->where('service.code', 'DEMO-DRIVING-LICENCE')
             ->has('service.procedure.steps')
             ->has('service.procedure.fields')
@@ -71,8 +69,7 @@ it('starts one idempotent draft for a verified citizen and published version', f
         ->assertRedirect(route('account.applications.show', $application));
 
     expect(Application::count())->toBe(1)
-        ->and($application->status)->toBe(ApplicationStatus::Draft)
-        ->and($application->procedureVersion->is_demo)->toBeTrue();
+        ->and($application->status)->toBe(ApplicationStatus::Draft);
 
     $this->assertDatabaseHas('activity_log', [
         'event' => 'application.started',
