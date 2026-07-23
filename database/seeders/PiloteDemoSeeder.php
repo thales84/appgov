@@ -17,65 +17,39 @@ class PiloteDemoSeeder extends Seeder
         $this->call(AccessControlSeeder::class);
         $this->call(CatalogDemoSeeder::class);
 
-        // Create Citizen User
-        $citizen = User::firstOrCreate(
-            ['email' => 'citoyen@appgov.cm'],
-            [
-                'public_id' => (string) Str::ulid(),
-                'name' => 'Jean-Paul Mbarga',
-                'account_type' => AccountType::Citizen,
-                'status' => AccountStatus::Active,
-                'password' => 'Password123!',
-                'email_verified_at' => now(),
-            ]
-        );
-
-        // Fallback for tests
-        User::firstOrCreate(
-            ['email' => 'citizen.demo@appgov.cm'],
-            [
-                'public_id' => (string) Str::ulid(),
-                'name' => 'Jean-Paul Mbarga',
-                'account_type' => AccountType::Citizen,
-                'status' => AccountStatus::Active,
-                'password' => 'Password123!',
-                'email_verified_at' => now(),
-            ]
-        );
-
-        CitizenProfile::firstOrCreate(
-            ['user_id' => $citizen->id],
-            [
-                'first_name' => 'Jean-Paul',
-                'last_name' => 'Mbarga',
-                'phone' => '+237690000000',
-                'preferred_locale' => 'fr',
-            ]
-        );
-
-        // Create Agent User
-        $org = Organization::where('code', 'MINTRANSPORT')->first()
-            ?? Organization::where('code', 'DEMO-TRANSPORT-AUTHORITY')->first();
-
-        if ($org) {
-            $agent = User::firstOrCreate(
-                ['email' => 'agent@appgov.cm'],
+        // Citizen Accounts
+        $citizenEmails = ['citoyen@appgov.cm', 'citizen.demo@appgov.cm'];
+        foreach ($citizenEmails as $email) {
+            $citizen = User::firstOrCreate(
+                ['email' => $email],
                 [
                     'public_id' => (string) Str::ulid(),
-                    'name' => 'Instructeur MINTRANSPORT',
-                    'account_type' => AccountType::Agent,
+                    'name' => 'Jean-Paul Mbarga',
+                    'account_type' => AccountType::Citizen,
                     'status' => AccountStatus::Active,
                     'password' => 'Password123!',
                     'email_verified_at' => now(),
-                    'two_factor_secret' => 'configured',
-                    'two_factor_recovery_codes' => 'configured',
-                    'two_factor_confirmed_at' => now(),
                 ]
             );
 
-            // Fallback for tests
-            User::firstOrCreate(
-                ['email' => 'agent.demo@appgov.cm'],
+            CitizenProfile::firstOrCreate(
+                ['user_id' => $citizen->id],
+                [
+                    'first_name' => 'Jean-Paul',
+                    'last_name' => 'Mbarga',
+                    'phone' => '+237690000000',
+                    'preferred_locale' => 'fr',
+                ]
+            );
+        }
+
+        // Agent Accounts
+        $orgs = Organization::whereIn('code', ['MINTRANSPORT', 'DEMO-TRANSPORT-AUTHORITY'])->get();
+        $agentEmails = ['agent@appgov.cm', 'agent.demo@appgov.cm'];
+
+        foreach ($agentEmails as $email) {
+            $agent = User::firstOrCreate(
+                ['email' => $email],
                 [
                     'public_id' => (string) Str::ulid(),
                     'name' => 'Instructeur MINTRANSPORT',
@@ -91,13 +65,15 @@ class PiloteDemoSeeder extends Seeder
 
             $agent->assignRole('agent_caseworker');
 
-            $org->agentAssignments()->firstOrCreate(
-                ['user_id' => $agent->id],
-                [
-                    'starts_at' => now()->subDays(30),
-                    'is_active' => true,
-                ]
-            );
+            foreach ($orgs as $org) {
+                $org->agentAssignments()->firstOrCreate(
+                    ['user_id' => $agent->id],
+                    [
+                        'starts_at' => now()->subDays(30),
+                        'is_active' => true,
+                    ]
+                );
+            }
         }
     }
 }

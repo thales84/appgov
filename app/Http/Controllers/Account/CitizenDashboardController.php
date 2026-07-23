@@ -15,8 +15,8 @@ class CitizenDashboardController extends Controller
 
         return Inertia::render('Account/Dashboard', [
             'identity' => [
-                'level' => $profile->identity_level->value,
-                'profileComplete' => filled($profile->phone),
+                'level' => $profile?->identity_level?->value ?? 'unverified',
+                'profileComplete' => filled($profile?->phone),
             ],
         ]);
     }
