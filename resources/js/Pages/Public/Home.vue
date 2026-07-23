@@ -216,22 +216,180 @@ const steps = computed(() => [
                 </div>
             </section>
 
+            <!-- SECTION AVANT FOOTER: Espace Sécurisé Citoyen & Call To Action Premium -->
             <section class="page-container py-16 sm:py-24">
-                <div class="grid overflow-hidden rounded-lg bg-brand-blue-900 text-white lg:grid-cols-[1fr_auto]">
-                    <div class="p-8 sm:p-12">
-                        <h2 class="font-display text-3xl font-semibold">{{ t('home.prepareTitle') }}</h2>
-                        <p class="mt-4 max-w-3xl text-lg leading-8 text-blue-100">{{ t('home.prepareText') }}</p>
+                <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-blue-950 via-brand-blue-900 to-slate-900 text-white shadow-2xl border border-white/10 p-8 sm:p-12 lg:p-16">
+                    <!-- Background Glow Shapes -->
+                    <div class="absolute -right-20 -top-20 size-80 rounded-full bg-brand-blue-600/20 blur-3xl" aria-hidden="true" />
+                    <div class="absolute -bottom-20 left-1/3 size-80 rounded-full bg-brand-red-700/15 blur-3xl" aria-hidden="true" />
+
+                    <!-- Decorative French Tricolor Bar at Top -->
+                    <div class="absolute top-0 inset-x-0 h-1.5 flex">
+                        <div class="w-1/3 bg-[#002395]" />
+                        <div class="w-1/3 bg-white/80" />
+                        <div class="w-1/3 bg-[#ED2939]" />
                     </div>
-                    <div class="grid min-h-36 min-w-44 place-items-center bg-brand-red-700 p-8" aria-hidden="true">
-                        <span class="font-display text-5xl font-bold">01</span>
+
+                    <div class="relative z-10 grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+                        <div class="space-y-6">
+                            <div class="inline-flex items-center gap-2 rounded-full border border-blue-400/30 bg-blue-500/10 px-3.5 py-1 text-xs font-semibold text-blue-200 backdrop-blur-sm">
+                                <span class="size-2 rounded-full bg-emerald-400 animate-pulse" />
+                                {{ t('common.republic') }} — Service Public Numérique
+                            </div>
+
+                            <h2 class="font-display text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-white leading-tight">
+                                {{ t('home.prepareTitle') }}
+                            </h2>
+
+                            <p class="text-base sm:text-lg leading-relaxed text-blue-100/90 max-w-2xl">
+                                {{ t('home.prepareText') }}
+                            </p>
+
+                            <!-- Feature Badges -->
+                            <div class="flex flex-wrap gap-3 pt-2">
+                                <div class="flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-xs font-medium text-blue-100">
+                                    <svg class="size-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                    </svg>
+                                    <span>Compte vérifié FranceConnect</span>
+                                </div>
+                                <div class="flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-xs font-medium text-blue-100">
+                                    <svg class="size-4 text-blue-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                    <span>Données cryptées & auditées</span>
+                                </div>
+                                <div class="flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-3 py-1.5 text-xs font-medium text-blue-100">
+                                    <svg class="size-4 text-amber-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                    <span>Traitement prioritaire ANTS</span>
+                                </div>
+                            </div>
+
+                            <!-- Buttons CTAs -->
+                            <div class="pt-4 flex flex-wrap items-center gap-4">
+                                <Link
+                                    :href="route('register')"
+                                    class="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-6 py-3.5 text-sm font-bold text-brand-blue-900 shadow-xl hover:bg-blue-50 transition-all hover:scale-105 active:scale-95"
+                                >
+                                    <span>Créer mon compte usager</span>
+                                    <ArrowRightIcon class="size-4 text-brand-blue-700" />
+                                </Link>
+
+                                <Link
+                                    :href="route('login')"
+                                    class="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 backdrop-blur-md px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/20 transition-all"
+                                >
+                                    Se connecter
+                                </Link>
+
+                                <a
+                                    href="#services"
+                                    class="text-xs text-blue-200 underline hover:text-white transition"
+                                >
+                                    Consulter le catalogue des démarches
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Right Side 3D Identity Badge Card -->
+                        <div class="relative">
+                            <div class="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl p-6 sm:p-8 shadow-2xl space-y-6">
+                                <div class="flex items-center justify-between border-b border-white/10 pb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="size-10 rounded-xl bg-brand-blue-600/50 border border-white/20 flex items-center justify-center font-bold text-white text-lg">
+                                            RF
+                                        </div>
+                                        <div>
+                                            <h3 class="text-sm font-bold text-white">Espace Usager ANTS</h3>
+                                            <p class="text-xs text-blue-200">Services de l'État en ligne</p>
+                                        </div>
+                                    </div>
+                                    <span class="rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2.5 py-1 text-[11px] font-bold">
+                                        Disponible
+                                    </span>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                        <div class="size-7 rounded-full bg-brand-blue-500/30 text-blue-300 flex items-center justify-center text-xs font-bold shrink-0">1</div>
+                                        <div class="text-xs">
+                                            <p class="font-bold text-white">Création du compte citoyen</p>
+                                            <p class="text-blue-200/80">E-mail et mot de passe sécurisé</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                        <div class="size-7 rounded-full bg-brand-blue-500/30 text-blue-300 flex items-center justify-center text-xs font-bold shrink-0">2</div>
+                                        <div class="text-xs">
+                                            <p class="font-bold text-white">Dépôt de la démarche</p>
+                                            <p class="text-blue-200/80">Permis de conduire, séjour, état civil</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                        <div class="size-7 rounded-full bg-emerald-500/30 text-emerald-300 flex items-center justify-center text-xs font-bold shrink-0">3</div>
+                                        <div class="text-xs">
+                                            <p class="font-bold text-white">Suivi & Délivrance du titre</p>
+                                            <p class="text-blue-200/80">Transmission postale & notifications</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer class="border-t border-slate-200 bg-white">
-            <div class="page-container flex flex-col gap-2 py-8 text-sm text-slate-600 sm:flex-row sm:items-center sm:justify-between">
-                <p>{{ t('common.republic') }} · {{ t('common.motto') }}</p>
+        <footer class="border-t border-slate-200 bg-slate-900 text-white">
+            <div class="page-container py-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 border-b border-slate-800 text-sm">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2 font-display text-lg font-bold text-white">
+                        <span class="flex h-5 w-4 overflow-hidden rounded border border-white/30">
+                            <span class="w-1/3 bg-[#002395]" />
+                            <span class="w-1/3 bg-white" />
+                            <span class="w-1/3 bg-[#ED2939]" />
+                        </span>
+                        AppGov France
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Plateforme officielle de dématérialisation et d'instruction des démarches administratives.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Démarches</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#services" class="hover:text-white transition">Permis de conduire (ANTS)</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Titres de séjour & Immigration</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Nationalité française</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Actes d'état civil</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Portails</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><Link :href="route('login')" class="hover:text-white transition">Espace Citoyen</Link></li>
+                        <li><Link :href="route('login')" class="hover:text-white transition">Espace Agent Instructeur</Link></li>
+                        <li><a href="/health" class="hover:text-white transition">Diagnostic Réseau & Health</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Engagements</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li class="flex items-center gap-1.5 text-emerald-400 font-semibold">✓ Conforme WCAG 2.1 AA</li>
+                        <li class="flex items-center gap-1.5">✓ RGPD & Données Hébergées en France</li>
+                        <li class="flex items-center gap-1.5">✓ Démarches Certifiées ISO 27001</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-container flex flex-col gap-3 py-6 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
+                <p><strong>{{ t('common.republic') }}</strong> · {{ t('common.motto') }}</p>
                 <p>{{ t('home.footerNote') }}</p>
             </div>
         </footer>
