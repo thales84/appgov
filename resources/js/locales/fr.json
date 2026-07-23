@@ -301,8 +301,8 @@
         "currentStep": "Étape actuelle",
         "nextStep": "Prochaine étape",
         "referenceLabel": "Référence de démonstration",
-        "reference": "CM-PDC-2026-7K9M4X-Q",
-        "trackingNotice": "Les données présentées ici sont une démonstration de l’interface, pas un dossier réel.",
+        "reference": "FR-PDC-2026-7K9M4X-Q",
+        "trackingNotice": "Les données présentées ici illustrent le suivi temps réel d'un dossier sous la plateforme AppGov France.",
         "prepareTitle": "Votre espace sécurisé est prêt",
         "prepareText": "Créez votre compte, vérifiez votre adresse e-mail et préparez votre profil avant l’ouverture de la première démarche.",
         "footerNote": "Plateforme de démonstration en cours de construction."
@@ -334,15 +334,22 @@
         }
     },
     "tracking": {
-        "progressLabel": "Progression du dossier",
-        "submitted": "Dossier déposé",
-        "documents": "Pièces contrôlées",
-        "exam": "Examen en cours",
-        "decision": "Décision",
-        "production": "Production du titre",
-        "submittedDate": "12 juillet",
-        "documentsDate": "14 juillet",
-        "examDate": "Aujourd’hui"
+        "progressLabel": "Rail de progression du dossier",
+        "submitted": "Dépôt de la demande en ligne",
+        "submittedDesc": "Formulaire complété, téléversement de la pièce d'identité et du justificatif de domicile.",
+        "documents": "Contrôle administratif ANTS",
+        "documentsDesc": "Vérification de la conformité des pièces justificatives et validation de la photo-signature numérique.",
+        "exam": "Épreuve pratique du permis (Cat. B)",
+        "examDesc": "Convocation au centre d'examen, évaluation par l'inspecteur du permis de conduire.",
+        "decision": "Décision & Enregistrement",
+        "decisionDesc": "Consignation de la décision d'attribution et enregistrement au fichier national du permis de conduire.",
+        "production": "Fabrication & Délivrance du titre",
+        "productionDesc": "Impression du permis de conduire sécurisé et expédition postale à domicile.",
+        "submittedDate": "12 mai 2026 à 09:14",
+        "documentsDate": "14 mai 2026 à 14:30",
+        "examDate": "Aujourd’hui (Convocation 14:00)",
+        "decisionDate": "Estimé sous 48h",
+        "productionDate": "Estimé sous 5 jours ouvrés"
     },
     "catalog": {
         "index": {

@@ -27,11 +27,11 @@ const services = computed(() => [
 ]);
 
 const steps = computed(() => [
-    { label: t('tracking.submitted'), date: t('tracking.submittedDate'), status: 'complete' },
-    { label: t('tracking.documents'), date: t('tracking.documentsDate'), status: 'complete' },
-    { label: t('tracking.exam'), date: t('tracking.examDate'), helper: t('home.currentStep'), status: 'current' },
-    { label: t('tracking.decision'), helper: t('home.nextStep'), status: 'upcoming' },
-    { label: t('tracking.production'), status: 'upcoming' },
+    { label: t('tracking.submitted'), description: t('tracking.submittedDesc'), date: t('tracking.submittedDate'), status: 'complete' },
+    { label: t('tracking.documents'), description: t('tracking.documentsDesc'), date: t('tracking.documentsDate'), status: 'complete' },
+    { label: t('tracking.exam'), description: t('tracking.examDesc'), date: t('tracking.examDate'), helper: t('home.currentStep'), status: 'current' },
+    { label: t('tracking.decision'), description: t('tracking.decisionDesc'), date: t('tracking.decisionDate'), helper: t('home.nextStep'), status: 'upcoming' },
+    { label: t('tracking.production'), description: t('tracking.productionDesc'), date: t('tracking.productionDate'), status: 'upcoming' },
 ]);
 </script>
 
@@ -113,23 +113,39 @@ const steps = computed(() => [
                         <p class="mt-5 text-lg leading-8 text-slate-600">{{ t('home.processIntro') }}</p>
                     </div>
 
-                    <div id="tracking" class="scroll-mt-6 border border-slate-200 bg-cloud-50">
-                        <div class="border-b border-slate-200 bg-white p-5 sm:flex sm:items-end sm:justify-between sm:gap-4">
-                            <div>
-                                <p class="eyebrow text-slate-500">{{ t('home.referenceLabel') }}</p>
-                                <p class="mt-2 break-all font-mono text-sm font-medium text-brand-blue-900 sm:text-base">
-                                    {{ t('home.reference') }}
-                                </p>
+                    <div id="tracking" class="scroll-mt-6 rounded-2xl border border-slate-200/80 bg-white shadow-xl shadow-slate-900/5 overflow-hidden">
+                        <div class="border-b border-slate-100 bg-slate-50/70 p-5 sm:p-6 sm:flex sm:items-center sm:justify-between sm:gap-4">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-8 w-6 overflow-hidden rounded shadow-sm border border-slate-300">
+                                    <span class="w-1/3 bg-[#002395]" />
+                                    <span class="w-1/3 bg-white" />
+                                    <span class="w-1/3 bg-[#ED2939]" />
+                                </span>
+                                <div>
+                                    <p class="text-xs font-bold uppercase tracking-wider text-slate-500">{{ t('home.referenceLabel') }}</p>
+                                    <p class="mt-0.5 break-all font-mono text-base font-extrabold text-brand-blue-900 sm:text-lg">
+                                        {{ t('home.reference') }}
+                                    </p>
+                                </div>
                             </div>
-                            <span class="mt-3 inline-flex rounded border border-brand-red-700/20 bg-brand-red-50 px-2 py-1 text-xs font-semibold text-brand-red-700 sm:mt-0">
-                                {{ t('common.demo') }}
-                            </span>
+                            <div class="mt-3 flex items-center gap-2 sm:mt-0">
+                                <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800">
+                                    <span class="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                                    ANTS — Ministère de l'Intérieur
+                                </span>
+                                <span class="inline-flex rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-bold text-amber-800">
+                                    {{ t('common.demo') }}
+                                </span>
+                            </div>
                         </div>
                         <div class="p-6 sm:p-8">
-                            <ApplicationRail :steps="steps" />
-                            <p class="mt-8 border-t border-slate-200 pt-5 text-sm leading-6 text-slate-600">
-                                {{ t('home.trackingNotice') }}
-                            </p>
+                            <ApplicationRail :steps="steps" status="under_review" />
+                            <div class="mt-6 rounded-lg border border-slate-100 bg-slate-50/80 p-4 text-xs text-slate-600 flex items-center gap-3">
+                                <svg class="w-5 h-5 text-slate-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span>{{ t('home.trackingNotice') }}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

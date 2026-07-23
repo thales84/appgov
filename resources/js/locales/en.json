@@ -301,8 +301,8 @@
         "currentStep": "Current step",
         "nextStep": "Next step",
         "referenceLabel": "Demonstration reference",
-        "reference": "CM-PDC-2026-7K9M4X-Q",
-        "trackingNotice": "The data shown here demonstrates the interface and does not represent a real application.",
+        "reference": "FR-PDC-2026-7K9M4X-Q",
+        "trackingNotice": "The data shown here illustrates real-time tracking of an application under the AppGov France platform.",
         "prepareTitle": "Your secure account is ready",
         "prepareText": "Create your account, verify your email address and prepare your profile before the first procedure opens.",
         "footerNote": "Demonstration platform under construction."
@@ -310,15 +310,15 @@
     "services": {
         "mobility": {
             "name": "Mobility",
-            "description": "Driving licences and driving-related services."
+            "description": "Driving licence and driving-related services."
         },
         "immigration": {
-            "name": "Residence and immigration",
-            "description": "Residence permit applications and renewals."
+            "name": "Residence & immigration",
+            "description": "Applications and renewals for residence permits."
         },
         "nationality": {
             "name": "Nationality",
-            "description": "Naturalisation and related procedures."
+            "description": "Naturalisation and associated procedures."
         },
         "education": {
             "name": "Education",
@@ -326,23 +326,30 @@
         },
         "civil": {
             "name": "Civil status",
-            "description": "Civil records, certificates and documents."
+            "description": "Records, certificates and civil status documents."
         },
         "business": {
             "name": "Economic activity",
-            "description": "Authorisations, licences and business formalities."
+            "description": "Authorisations, licences and professional formalities."
         }
     },
     "tracking": {
-        "progressLabel": "Application progress",
-        "submitted": "Application submitted",
-        "documents": "Documents checked",
-        "exam": "Examination in progress",
-        "decision": "Decision",
-        "production": "Document production",
-        "submittedDate": "12 July",
-        "documentsDate": "14 July",
-        "examDate": "Today"
+        "progressLabel": "Application progress rail",
+        "submitted": "Online application submission",
+        "submittedDesc": "Form completed, identity document and proof of residence uploaded.",
+        "documents": "ANTS administrative review",
+        "documentsDesc": "Verification of supporting documents compliance and digital photo-signature validation.",
+        "exam": "Practical driving exam (Cat. B)",
+        "examDesc": "Convocation to test center, assessment by driving license examiner.",
+        "decision": "Decision & Registration",
+        "decisionDesc": "Recording of approval decision and registration in national driving license registry.",
+        "production": "Production & Document delivery",
+        "productionDesc": "Secure driving license printing and postal delivery dispatch.",
+        "submittedDate": "May 12, 2026 at 09:14",
+        "documentsDate": "May 14, 2026 at 14:30",
+        "examDate": "Today (Convocation 14:00)",
+        "decisionDate": "Estimated in 48h",
+        "productionDate": "Estimated in 5 business days"
     },
     "catalog": {
         "index": {
