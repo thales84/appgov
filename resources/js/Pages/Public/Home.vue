@@ -105,12 +105,77 @@ const steps = computed(() => [
 
             <section id="process" class="scroll-mt-6 border-y border-slate-200 bg-white py-16 sm:py-24">
                 <div class="page-container grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-                    <div>
-                        <p class="eyebrow text-brand-blue-600">{{ t('home.processEyebrow') }}</p>
-                        <h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-5xl">
-                            {{ t('home.processTitle') }}
-                        </h2>
-                        <p class="mt-5 text-lg leading-8 text-slate-600">{{ t('home.processIntro') }}</p>
+                    <div class="space-y-8">
+                        <div>
+                            <p class="eyebrow text-brand-blue-600">{{ t('home.processEyebrow') }}</p>
+                            <h2 class="mt-4 font-display text-3xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+                                {{ t('home.processTitle') }}
+                            </h2>
+                            <p class="mt-4 text-base sm:text-lg leading-relaxed text-slate-600">
+                                {{ t('home.processIntro') }}
+                            </p>
+                        </div>
+
+                        <!-- Visuel d'illustration avec Effet Wahouuu & Glassmorphism -->
+                        <div class="relative group mt-6 rounded-2xl p-1 bg-gradient-to-br from-brand-blue-500/30 via-slate-200 to-brand-blue-900/40 shadow-2xl shadow-brand-blue-900/15">
+                            <!-- Background Glow Blobs -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-blue-600 to-emerald-500 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" aria-hidden="true" />
+
+                            <div class="relative overflow-hidden rounded-xl bg-slate-900 aspect-[4/3]">
+                                <img
+                                    :src="'/images/digital_dossier_showcase.png'"
+                                    alt="Suivi numérique sécurisé des dossiers administratifs — AppGov France"
+                                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out brightness-95 group-hover:brightness-100"
+                                />
+
+                                <!-- Overlay gradient -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
+
+                                <!-- Floating Glass Badge Top Left -->
+                                <div class="absolute top-4 left-4 backdrop-blur-md bg-slate-900/70 border border-white/20 rounded-lg px-3 py-2 text-white shadow-lg flex items-center gap-2">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                                    <span class="text-xs font-semibold tracking-wide">Traçabilité ANTS 24/7</span>
+                                </div>
+
+                                <!-- Floating Glass Badge Bottom Right -->
+                                <div class="absolute bottom-4 right-4 backdrop-blur-md bg-white/90 border border-slate-200/80 rounded-xl p-3 shadow-xl max-w-[220px]">
+                                    <div class="flex items-center gap-2 text-xs font-bold text-slate-900">
+                                        <svg class="w-4 h-4 text-brand-blue-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                        </svg>
+                                        <span>Horodatage SHA-256</span>
+                                    </div>
+                                    <p class="text-[11px] text-slate-500 mt-1 leading-snug">Chaque étape et document scellés cryptographiquement.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Points forts d'explication -->
+                        <div class="grid grid-cols-2 gap-4 pt-2">
+                            <div class="rounded-xl border border-slate-200/70 bg-slate-50/60 p-3.5 flex items-start gap-3">
+                                <div class="p-1.5 rounded-lg bg-brand-blue-50 text-brand-blue-600 shrink-0">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-900">Notifications Directes</h4>
+                                    <p class="text-[11px] text-slate-500 mt-0.5">SMS & e-mail à chaque changement de statut.</p>
+                                </div>
+                            </div>
+
+                            <div class="rounded-xl border border-slate-200/70 bg-slate-50/60 p-3.5 flex items-start gap-3">
+                                <div class="p-1.5 rounded-lg bg-emerald-50 text-emerald-600 shrink-0">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457-.312-2.841-.873-4.084" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-slate-900">Identité Garantir</h4>
+                                    <p class="text-[11px] text-slate-500 mt-0.5">Authentification et vérification FranceConnect.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div id="tracking" class="scroll-mt-6 rounded-2xl border border-slate-200/80 bg-white shadow-xl shadow-slate-900/5 overflow-hidden">
