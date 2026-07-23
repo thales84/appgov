@@ -22,7 +22,7 @@ class IssueApplicationInvoice
         }
 
         $totalMinor = $fees->sum('amount_minor');
-        $currency = $fees->first()?->currency ?? 'XAF';
+        $currency = $fees->first()?->currency ?? 'EUR';
 
         return DB::transaction(function () use ($application, $fees, $totalMinor, $currency) {
             $invoiceNumber = 'INV-'.date('Y').'-'.strtoupper(Str::random(8));

@@ -72,7 +72,7 @@ it('calculates operational KPIs and reports accurately', function () {
     $kpis = $reportService->execute();
 
     expect($kpis['totalApplications'])->toBe(1)
-        ->and($kpis['currency'])->toBe('XAF')
+        ->and($kpis['currency'])->toBe('EUR')
         ->and($kpis)->toHaveKey('statusCounts');
 });
 

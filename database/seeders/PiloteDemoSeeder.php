@@ -17,14 +17,14 @@ class PiloteDemoSeeder extends Seeder
         $this->call(AccessControlSeeder::class);
         $this->call(CatalogDemoSeeder::class);
 
-        // Citizen Accounts
-        $citizenEmails = ['citoyen@appgov.cm', 'citizen.demo@appgov.cm'];
+        // Citizen Accounts (French Republic)
+        $citizenEmails = ['citoyen@appgov.fr', 'citoyen@appgov.cm', 'citizen.demo@appgov.cm'];
         foreach ($citizenEmails as $email) {
             $citizen = User::firstOrCreate(
                 ['email' => $email],
                 [
                     'public_id' => (string) Str::ulid(),
-                    'name' => 'Jean-Paul Mbarga',
+                    'name' => 'Jean Dupont',
                     'account_type' => AccountType::Citizen,
                     'status' => AccountStatus::Active,
                     'password' => 'Password123!',
@@ -35,24 +35,24 @@ class PiloteDemoSeeder extends Seeder
             CitizenProfile::firstOrCreate(
                 ['user_id' => $citizen->id],
                 [
-                    'first_name' => 'Jean-Paul',
-                    'last_name' => 'Mbarga',
-                    'phone' => '+237690000000',
+                    'first_name' => 'Jean',
+                    'last_name' => 'Dupont',
+                    'phone' => '+33612345678',
                     'preferred_locale' => 'fr',
                 ]
             );
         }
 
-        // Agent Accounts
+        // Agent Accounts (ANTS / Ministry of Interior)
         $orgs = Organization::whereIn('code', ['MINTRANSPORT', 'DEMO-TRANSPORT-AUTHORITY'])->get();
-        $agentEmails = ['agent@appgov.cm', 'agent.demo@appgov.cm'];
+        $agentEmails = ['agent@appgov.fr', 'agent@appgov.cm', 'agent.demo@appgov.cm'];
 
         foreach ($agentEmails as $email) {
             $agent = User::firstOrCreate(
                 ['email' => $email],
                 [
                     'public_id' => (string) Str::ulid(),
-                    'name' => 'Instructeur MINTRANSPORT',
+                    'name' => 'Instructeur ANTS — Préfecture de Police',
                     'account_type' => AccountType::Agent,
                     'status' => AccountStatus::Active,
                     'password' => 'Password123!',

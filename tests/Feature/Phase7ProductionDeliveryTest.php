@@ -75,7 +75,7 @@ it('completes production with quality check, issues document number and transiti
     $issuedDoc = $action->execute($application, $agent, 'Impression et puce RFID vérifiées.');
 
     expect($application->fresh()->status)->toBe(ApplicationStatus::Available)
-        ->and($issuedDoc->document_number)->toStartWith('CM-DOC-')
+        ->and($issuedDoc->document_number)->toStartWith('FR-DOC-')
         ->and(Delivery::count())->toBe(1);
 
     $this->assertDatabaseHas('activity_log', [

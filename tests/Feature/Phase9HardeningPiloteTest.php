@@ -48,12 +48,12 @@ it('seeds the pilote demonstration environment cleanly', function () {
     $this->seed(PiloteDemoSeeder::class);
 
     $this->assertDatabaseHas('users', [
-        'email' => 'citoyen@appgov.cm',
+        'email' => 'citoyen@appgov.fr',
     ]);
 
     $this->assertDatabaseHas('citizen_profiles', [
-        'first_name' => 'Jean-Paul',
-        'last_name' => 'Mbarga',
+        'first_name' => 'Jean',
+        'last_name' => 'Dupont',
     ]);
 });
 
@@ -64,7 +64,7 @@ it('executes full end-to-end application lifecycle from submission to sealed arc
     // 1. Citizen starts and submits application
     $this->actingAs($citizen)->post(route('account.services.applications.store', $service));
     $application = Application::firstOrFail();
-    $application->update(['status' => ApplicationStatus::UnderReview, 'reference' => 'CM-PDC-2026-E2E001-Z']);
+    $application->update(['status' => ApplicationStatus::UnderReview, 'reference' => 'FR-PDC-2026-E2E001-Z']);
 
     // 2. Caseworker approves application
     $agent = User::factory()->agent()->create();
@@ -97,8 +97,8 @@ it('executes full end-to-end application lifecycle from submission to sealed arc
     $location = Location::create([
         'organization_id' => $service->organization_id,
         'code' => 'LOC-E2E',
-        'name_fr' => 'Centre E2E',
-        'name_en' => 'Center E2E',
+        'name_fr' => 'Centre E2E Paris',
+        'name_en' => 'Center E2E Paris',
         'is_active' => true,
     ]);
     $slot = $location->slots()->create([
@@ -125,7 +125,7 @@ it('executes full end-to-end application lifecycle from submission to sealed arc
     app(CompleteProductionAndIssueDocument::class)->execute($application, $agent);
 
     $delivery = $application->delivery;
-    app(DeliverDocumentWithProof::class)->execute($delivery, $agent, 'Titulaire E2E', 'CNI-E2E-999');
+    app(DeliverDocumentWithProof::class)->execute($delivery, $agent, 'Jean Dupont', 'CNI-FR-999');
 
     expect($application->fresh()->status)->toBe(ApplicationStatus::Closed);
 

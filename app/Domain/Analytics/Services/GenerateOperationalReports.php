@@ -47,7 +47,7 @@ class GenerateOperationalReports
             'totalApplications' => $totalApplications,
             'statusCounts' => $statusCounts,
             'totalRevenueMinor' => (int) $totalRevenueMinor,
-            'currency' => 'XAF',
+            'currency' => 'EUR',
             'issuedDocumentsCount' => $issuedDocumentsCount,
             'generatedAt' => now()->toIso8601String(),
         ];

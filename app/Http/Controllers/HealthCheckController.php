@@ -23,10 +23,10 @@ class HealthCheckController extends Controller
 
         return response()->json([
             'status' => $status,
-            'app' => config('app.name', 'AppGov'),
+            'app' => config('app.name', 'AppGov France'),
             'environment' => config('app.env'),
             'timestamp_utc' => now()->toIso8601String(),
-            'timestamp_wat' => now()->timezone('Africa/Douala')->toIso8601String(),
+            'timestamp_paris' => now()->timezone('Europe/Paris')->toIso8601String(),
             'checks' => [
                 'database' => $dbOk ? 'healthy' : 'unhealthy',
                 'storage' => $storageOk ? 'healthy' : 'unhealthy',

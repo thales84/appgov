@@ -93,15 +93,15 @@ class CatalogDemoSeeder extends Seeder
                 [
                     'public_id' => (string) Str::ulid(),
                     'type' => OrganizationType::Ministry,
-                    'name_fr' => 'Ministère des Transports (MINTRANSPORT)',
-                    'name_en' => 'Ministry of Transport (MINTRANSPORT)',
+                    'name_fr' => 'Ministère de l’Intérieur — ANTS',
+                    'name_en' => 'Ministry of the Interior — ANTS',
                     'is_active' => true,
                 ],
             );
             $organization->update([
                 'type' => OrganizationType::Ministry,
-                'name_fr' => 'Ministère des Transports (MINTRANSPORT)',
-                'name_en' => 'Ministry of Transport (MINTRANSPORT)',
+                'name_fr' => 'Ministère de l’Intérieur — ANTS',
+                'name_en' => 'Ministry of the Interior — ANTS',
                 'is_active' => true,
             ]);
 
@@ -111,8 +111,8 @@ class CatalogDemoSeeder extends Seeder
                 [
                     'public_id' => (string) Str::ulid(),
                     'type' => OrganizationType::Ministry,
-                    'name_fr' => 'Ministère des Transports (MINTRANSPORT)',
-                    'name_en' => 'Ministry of Transport (MINTRANSPORT)',
+                    'name_fr' => 'Ministère de l’Intérieur — ANTS',
+                    'name_en' => 'Ministry of the Interior — ANTS',
                     'is_active' => true,
                 ],
             );
@@ -126,8 +126,8 @@ class CatalogDemoSeeder extends Seeder
                     'service_category_id' => $mobility->id,
                     'name_fr' => 'Permis de conduire',
                     'name_en' => 'Driving licence',
-                    'description_fr' => 'Demande, instruction et délivrance du permis de conduire en République du Cameroun.',
-                    'description_en' => 'Application, review and issuance of driving licence in the Republic of Cameroon.',
+                    'description_fr' => 'Demande, instruction et délivrance du permis de conduire en République Française via l’ANTS.',
+                    'description_en' => 'Application, review and issuance of driving licence in the French Republic via ANTS.',
                     'is_active' => true,
                 ],
             );
@@ -136,8 +136,8 @@ class CatalogDemoSeeder extends Seeder
                 'service_category_id' => $mobility->id,
                 'name_fr' => 'Permis de conduire',
                 'name_en' => 'Driving licence',
-                'description_fr' => 'Demande, instruction et délivrance du permis de conduire en République du Cameroun.',
-                'description_en' => 'Application, review and issuance of driving licence in the Republic of Cameroon.',
+                'description_fr' => 'Demande, instruction et délivrance du permis de conduire en République Française via l’ANTS.',
+                'description_en' => 'Application, review and issuance of driving licence in the French Republic via ANTS.',
                 'is_active' => true,
             ]);
 
@@ -150,10 +150,10 @@ class CatalogDemoSeeder extends Seeder
                     'summary_en' => 'Official procedure for registration, evaluation and driving licence acquisition.',
                     'description_fr' => 'Service public de demande, de vérification des pièces, de paiement des droits et d’organisation des épreuves théoriques et pratiques.',
                     'description_en' => 'Public service for application, document verification, fee payment and examination organization.',
-                    'eligibility_fr' => 'Être âgé d’au moins 18 ans et jouir de ses droits civiques.',
-                    'eligibility_en' => 'Be at least 18 years old and enjoy full civil rights.',
-                    'legal_basis_fr' => 'Réglementation sur la sécurité routière et la délivrance des permis de conduire.',
-                    'legal_basis_en' => 'Road safety regulations and driving licence issuance standards.',
+                    'eligibility_fr' => 'Être âgé d’au moins 18 ans et résider en France.',
+                    'eligibility_en' => 'Be at least 18 years old and reside in France.',
+                    'legal_basis_fr' => 'Code de la route et réglementation relative aux titres sécurisés ANTS.',
+                    'legal_basis_en' => 'Highway code and ANTS secure title standards.',
                     'is_demo' => false,
                 ]);
 
@@ -185,10 +185,10 @@ class CatalogDemoSeeder extends Seeder
             'summary_en' => 'Official procedure for registration, evaluation and driving licence acquisition.',
             'description_fr' => 'Service public de demande, de vérification des pièces, de paiement des droits et d’organisation des épreuves théoriques et pratiques.',
             'description_en' => 'Public service for application, document verification, fee payment and examination organization.',
-            'eligibility_fr' => 'Être âgé d’au moins 18 ans et jouir de ses droits civiques.',
-            'eligibility_en' => 'Be at least 18 years old and enjoy full civil rights.',
-            'legal_basis_fr' => 'Réglementation sur la sécurité routière et la délivrance des permis de conduire.',
-            'legal_basis_en' => 'Road safety regulations and driving licence issuance standards.',
+            'eligibility_fr' => 'Être âgé d’au moins 18 ans et résider en France.',
+            'eligibility_en' => 'Be at least 18 years old and reside in France.',
+            'legal_basis_fr' => 'Code de la route et réglementation relative aux titres sécurisés ANTS.',
+            'legal_basis_en' => 'Highway code and ANTS secure title standards.',
             'is_demo' => false,
             'effective_from' => now()->subDay()->startOfDay(),
         ]);
@@ -240,7 +240,7 @@ class CatalogDemoSeeder extends Seeder
             'field_type' => FormFieldType::Text,
             'label_fr' => 'Catégorie de permis souhaitée (ex: Catégorie B)',
             'label_en' => 'Requested licence category (e.g. Category B)',
-            'help_fr' => 'Veuillez préciser la catégorie solicitée.',
+            'help_fr' => 'Veuillez préciser la catégorie sollicitée.',
             'help_en' => 'Please specify the requested category.',
             'is_required' => true,
         ]);
@@ -252,8 +252,9 @@ class CatalogDemoSeeder extends Seeder
     private function createDocuments(ProcedureVersion $version, array $steps): void
     {
         $documents = [
-            ['IDENTITY_DOCUMENT', 'Carte Nationale d’Identité (CNI)', 'National Identity Card (CNI)'],
-            ['MEDICAL_CERTIFICATE', 'Certificat médical d’aptitude', 'Medical fitness certificate'],
+            ['IDENTITY_DOCUMENT', 'Carte Nationale d’Identité ou Passeport', 'National Identity Card or Passport'],
+            ['PROOF_OF_ADDRESS', 'Justificatif de domicile de moins de 6 mois', 'Proof of address under 6 months old'],
+            ['EPHOTO_CODE', 'Code photo-signature numérique e-photo', 'Digital e-photo photo-signature code'],
         ];
 
         foreach ($documents as $index => [$code, $nameFr, $nameEn]) {
@@ -278,10 +279,10 @@ class CatalogDemoSeeder extends Seeder
             'code' => 'AGE_ELIGIBILITY',
             'position' => 1,
             'rule_type' => ProcedureRuleType::Eligibility,
-            'name_fr' => 'Condition d’âge légal',
-            'name_en' => 'Legal age requirement',
-            'description_fr' => 'Le candidat doit être âgé d’au moins 18 ans révolus au jour du dépôt.',
-            'description_en' => 'The applicant must be at least 18 years old on the submission date.',
+            'name_fr' => 'Condition d’âge légal (18 ans)',
+            'name_en' => 'Legal age requirement (18 years)',
+            'description_fr' => 'Le candidat doit être âgé d’au moins 18 ans révolus au jour de l’épreuve.',
+            'description_en' => 'The applicant must be at least 18 years old on the exam date.',
         ]);
     }
 
@@ -295,18 +296,18 @@ class CatalogDemoSeeder extends Seeder
             'procedure_step_id' => $steps['PAYMENT'],
             'code' => 'LICENCE_FEE',
             'position' => 1,
-            'label_fr' => 'Frais d’examen et de délivrance du permis',
-            'label_en' => 'Exam and licence issuance fee',
-            'description_fr' => 'Droits officiels d’enregistrement et d’impression du permis de conduire.',
-            'description_en' => 'Official registration and licence printing fee.',
-            'amount_minor' => 15000,
-            'currency' => 'XAF',
-            'minor_unit_exponent' => 0,
+            'label_fr' => 'Droits de délivrance du permis et timbre fiscal',
+            'label_en' => 'Licence issuance fee and tax stamp',
+            'description_fr' => 'Droits d’enregistrement et confection du permis de conduire.',
+            'description_en' => 'Registration and driving licence manufacturing fee.',
+            'amount_minor' => 3000,
+            'currency' => 'EUR',
+            'minor_unit_exponent' => 2,
             'is_mandatory' => true,
-            'due_when_fr' => 'Après approbation du contrôle administratif',
-            'due_when_en' => 'After administrative review approval',
-            'legal_basis_fr' => 'Arrêté fixant les tarifs des titres de transport',
-            'legal_basis_en' => 'Order establishing transport title fees',
+            'due_when_fr' => 'Après validation du contrôle administratif',
+            'due_when_en' => 'After administrative review validation',
+            'legal_basis_fr' => 'Code général des impôts — Timbre fiscal permis de conduire',
+            'legal_basis_en' => 'General Tax Code — Driving licence tax stamp',
         ]);
     }
 }

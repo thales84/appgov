@@ -29,7 +29,7 @@ class CompleteProductionAndIssueDocument
                 'quality_notes' => $qualityNotes,
             ]);
 
-            $documentNumber = 'CM-DOC-'.date('Y').'-'.strtoupper(Str::random(8));
+            $documentNumber = 'FR-DOC-'.date('Y').'-'.strtoupper(Str::random(8));
 
             $issuedDoc = IssuedDocument::create([
                 'application_id' => $application->id,

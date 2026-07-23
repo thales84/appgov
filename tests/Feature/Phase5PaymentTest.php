@@ -30,12 +30,12 @@ it('issues an invoice for an application with snapshot fee lines in minor curren
         ->assertInertia(fn (Assert $page) => $page
             ->component('Account/Applications/InvoiceShow')
             ->has('invoice.lines')
-            ->where('invoice.currency', 'XAF')
+            ->where('invoice.currency', 'EUR')
         );
 
     $this->assertDatabaseHas('invoices', [
         'application_id' => $application->id,
-        'currency' => 'XAF',
+        'currency' => 'EUR',
     ]);
 });
 
@@ -82,7 +82,7 @@ it('processes payment callback idempotently without double payment on repeated c
         'idempotency_key' => $idempotencyKey,
         'status' => 'initiated',
         'amount_minor' => $invoice->total_amount_minor,
-        'currency' => 'XAF',
+        'currency' => 'EUR',
         'initiated_at' => now(),
     ]);
 
@@ -121,7 +121,7 @@ it('allows authorized citizen to download PDF payment receipt and forbids unauth
         'idempotency_key' => $idempotencyKey,
         'status' => 'initiated',
         'amount_minor' => $invoice->total_amount_minor,
-        'currency' => 'XAF',
+        'currency' => 'EUR',
         'initiated_at' => now(),
     ]);
 
